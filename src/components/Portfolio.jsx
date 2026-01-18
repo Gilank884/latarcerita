@@ -1,5 +1,6 @@
 import { ExternalLink } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
 const projects = [
@@ -25,31 +26,31 @@ const projects = [
 
 const Portfolio = () => {
     const sectionRef = useRef(null);
-    const cardsRef = useRef([]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.from(cardsRef.current, {
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 70%",
+            gsap.fromTo(".portfolio-card",
+                {
+                    y: 60,
+                    opacity: 0
                 },
-                y: 60,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: "power3.out"
-            });
+                {
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top 70%",
+                        toggleActions: "play none none none"
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.2,
+                    ease: "power3.out"
+                }
+            );
         }, sectionRef);
 
         return () => ctx.revert();
     }, []);
-
-    const addToRefs = (el) => {
-        if (el && !cardsRef.current.includes(el)) {
-            cardsRef.current.push(el);
-        }
-    }
 
     return (
         <section ref={sectionRef} id="portfolio" className="py-20 lg:py-32 bg-slate-50">
@@ -68,8 +69,7 @@ const Portfolio = () => {
                     {projects.map((project, index) => (
                         <div
                             key={index}
-                            ref={addToRefs}
-                            className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                            className="portfolio-card group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
                         >
                             <div className="relative aspect-[4/3] overflow-hidden">
                                 <img

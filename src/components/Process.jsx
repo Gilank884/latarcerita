@@ -1,39 +1,42 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
 const steps = [
-    { num: "01", title: "Discovery", desc: "Memahami model bisnis, target audiens, dan tujuan proyek Anda." },
-    { num: "02", title: "Strategy", desc: "Merancang sitemap, wireframe, dan strategi teknologi yang tepat." },
-    { num: "03", title: "Development", desc: "Membangun sistem dengan kode yang bersih, aman, dan performa tinggi." },
-    { num: "04", title: "Launch", desc: "Testing menyeluruh, deployment, dan handover project." },
+    { num: "01", title: "Konsultasi", desc: "Diskusi awal untuk memahami visi, target, dan kebutuhan bisnis Anda secara mendalam." },
+    { num: "02", title: "Estimasi", desc: "Pemberian rincian biaya dan timeline pengerjaan yang transparan tanpa biaya siluman." },
+    { num: "03", title: "Desain", desc: "Perancangan UI/UX yang modern dan eksklusif, memastikan kenyamanan bagi pengguna Anda." },
+    { num: "04", title: "Development", desc: "Proses coding menggunakan teknologi terbaru untuk menghasilkan sistem yang tangguh." },
+    { num: "05", title: "Testing", desc: "Quality assurance ketat untuk memastikan tidak ada bug dan performa tetap optimal." },
+    { num: "06", title: "Launching", desc: "Deployment ke server live dan pendampingan pasca-rilis untuk memastikan sukses." },
 ];
 
 const Process = () => {
     const sectionRef = useRef(null);
-    const stepsRef = useRef([]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.from(stepsRef.current, {
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 70%",
+            gsap.fromTo(".process-step",
+                {
+                    y: 30,
+                    opacity: 0
                 },
-                y: 30,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: "power3.out"
-            });
+                {
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top 70%",
+                        toggleActions: "play none none none"
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.2,
+                    ease: "power3.out"
+                }
+            );
         }, sectionRef);
         return () => ctx.revert();
     }, []);
-
-    const addToRefs = (el) => {
-        if (el && !stepsRef.current.includes(el)) {
-            stepsRef.current.push(el);
-        }
-    };
 
     return (
         <section ref={sectionRef} className="py-24 bg-white relative overflow-hidden">
@@ -47,12 +50,12 @@ const Process = () => {
                     <p className="mt-4 text-slate-600 max-w-2xl mx-auto">Kami mengadaptasi metodologi Agile yang terstruktur namun fleksibel, memastikan setiap iterasi membawa nilai tambah bagi bisnis Anda.</p>
                 </div>
 
-                <div className="grid md:grid-cols-4 gap-8 relative">
+                <div className="grid grid-cols-2 lg:grid-cols-6 gap-8 relative">
                     {/* Connecting Line (Desktop) */}
                     <div className="hidden md:block absolute top-[2.5rem] left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-sky-200 to-transparent -z-10"></div>
 
                     {steps.map((step, index) => (
-                        <div key={index} ref={addToRefs} className="relative pt-8 md:pt-0 group">
+                        <div key={index} className="process-step relative pt-8 md:pt-0 group">
                             <div className="w-20 h-20 rounded-2xl bg-white border-4 border-slate-50 group-hover:border-sky-100 text-sky-600 text-2xl font-bold flex items-center justify-center mx-auto mb-8 relative z-10 shadow-lg group-hover:scale-110 transition-transform duration-300">
                                 {step.num}
                             </div>

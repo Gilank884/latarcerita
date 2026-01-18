@@ -433,9 +433,6 @@ const StartProjectPage = () => {
                             </div>
                         ))}
                     </div>
-                    <h1 ref={titleRef} className="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter text-center uppercase leading-none mt-10 opacity-0 italic">
-                        Mari Kita <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-600">Terbangkan</span> <br /> Ide Anda
-                    </h1>
                 </div>
             )}
 

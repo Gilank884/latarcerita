@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { animate, createTimeline, stagger } from 'animejs';
-import { ArrowRight, Code, Layout, Rocket, Sparkles } from 'lucide-react';
+import gsap from 'gsap';
+import { ArrowRight, Code, Layout, Rocket, Sparkles, ChevronRight } from 'lucide-react';
 
 const HeroAnime = () => {
     const containerRef = useRef(null);
@@ -23,39 +24,51 @@ const HeroAnime = () => {
             duration: 1000
         });
 
-        // 1. Grid Entrance
-        tl.add('.anime-grid-dot', {
-            scale: [0, 1],
-            opacity: [0, 0.3],
-            delay: stagger(20, { grid: [cols, rows], from: 'center' }),
-            duration: 800
-        });
+        // Use GSAP Context for React stability
+        const ctx = gsap.context(() => {
+            // 1. Grid Entrance
+            tl.add('.anime-grid-dot', {
+                scale: [0, 1],
+                opacity: [0, 0.3],
+                delay: stagger(20, { grid: [cols, rows], from: 'center' }),
+                duration: 800
+            });
 
-        // 2. Main Text Stagger
-        tl.add('.hero-text-el', {
-            translateY: [50, 0],
-            opacity: [0, 1],
-            delay: stagger(100),
-        }, '-=400');
+            // 2. GSAP Content Animations
+            gsap.from(".hero-left-anim", {
+                x: -100,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.2,
+                ease: "power4.out",
+                delay: 0.5
+            });
 
-        // 3. Visual Element Entrance
-        tl.add('.hero-visual-el', {
-            translateX: [50, 0],
-            opacity: [0, 1],
-            duration: 1200,
-        }, '-=800');
+            gsap.from(".hero-right-anim", {
+                x: 100,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power4.out",
+                delay: 0.8
+            });
 
-        // Floating Animation for Visual Elements
-        animate('.floating-icon', {
-            translateY: [-10, 10],
-            direction: 'alternate',
-            loop: true,
-            easing: 'easeInOutSine',
-            duration: 2000,
-            delay: stagger(300)
-        });
+            // Floating Animation for Visual Elements
+            animate('.floating-icon', {
+                translateY: [-10, 10],
+                direction: 'alternate',
+                loop: true,
+                easing: 'easeInOutSine',
+                duration: 2000,
+                delay: stagger(300)
+            });
+        }, containerRef);
 
-    }, []);
+        return () => {
+            ctx.revert();
+            // Anime.js doesn't have a built-in "revert" like GSAP but we can pause it
+        };
+
+    }, []); // Run only once on mount to prevent infinite loop
 
     const handleDotHover = (e) => {
         animate(e.target, {
@@ -97,43 +110,40 @@ const HeroAnime = () => {
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
 
                 {/* Text Content */}
-                <div className="max-w-2xl">
-                    <div className="hero-text-el inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 shadow-sm text-sky-600 text-xs font-semibold uppercase tracking-wider mb-6 opacity-0">
+                <div className="max-w-2xl relative z-20">
+                    <div className="hero-left-anim inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 shadow-sm text-sky-600 text-xs font-semibold uppercase tracking-wider mb-6">
                         <Sparkles size={14} className="text-amber-400" />
-                        <span>Interactive Digital Experience</span>
+                        <span>Trusted Digital Partner</span>
                     </div>
 
-                    <h1 className="hero-text-el text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6 opacity-0">
-                        Membangun <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-600">Ekosistem Digital</span> yang Hidup.
+                    <h1 className="hero-left-anim text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
+                        Solusi Website, Sistem, dan <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-600 italic">Aplikasi untuk Bisnis</span> Anda.
                     </h1>
 
-                    <p className="hero-text-el text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-lg opacity-0">
-                        Solusi website dan aplikasi interaktif yang tidak hanya fungsional, tetapi juga memberikan pengalaman visual yang memukau bagi pengguna Anda.
+                    <p className="hero-left-anim text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
+                        Bangun bisnis lebih profesional dengan teknologi modern dan harga transparan. Kami siap membantu transformasi digital Anda.
                     </p>
 
-                    <div className="hero-text-el flex flex-col sm:flex-row gap-4 opacity-0">
+                    <div className="hero-left-anim flex flex-wrap gap-4">
                         <Link
                             to="/start-project"
-                            className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-slate-900 text-white font-semibold shadow-xl shadow-slate-200 hover:bg-slate-800 transition-transform active:scale-95"
-                            onMouseEnter={(e) => animate(e.target, { scale: 1.05, duration: 300 })}
-                            onMouseLeave={(e) => animate(e.target, { scale: 1, duration: 300 })}
+                            className="inline-flex justify-center items-center px-10 py-4 rounded-full bg-slate-900 text-white font-bold shadow-2xl shadow-slate-200 hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 group"
                         >
                             Mulai Proyek
-                            <ArrowRight className="ml-2 w-5 h-5" />
+                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Link>
                         <Link
                             to="/services"
-                            className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-white border border-slate-200 text-slate-700 font-semibold hover:bg-slate-50 transition-transform active:scale-95"
-                            onMouseEnter={(e) => animate(e.target, { scale: 1.05, duration: 300 })}
-                            onMouseLeave={(e) => animate(e.target, { scale: 1, duration: 300 })}
+                            className="inline-flex justify-center items-center px-10 py-4 rounded-full bg-white border border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
                         >
-                            Lihat Layanan
+                            Lihat Paket
+                            <ChevronRight size={20} className="text-slate-400" />
                         </Link>
                     </div>
                 </div>
 
                 {/* Visual / Interactive Mockup */}
-                <div className="hero-visual-el relative lg:h-[600px] flex items-center justify-center perspective-1000 opacity-0">
+                <div className="hero-right-anim relative lg:h-[600px] flex items-center justify-center perspective-1000">
                     <div className="relative w-full aspect-square max-w-md lg:max-w-full bg-gradient-to-br from-white/90 to-sky-50/90 backdrop-blur-xl rounded-[2.5rem] border border-white/50 shadow-2xl p-8 flex flex-col justify-between z-20 overflow-hidden transform rotate-y-6 hover:rotate-y-0 transition-transform duration-700">
 
                         {/* Decorative blobs */}

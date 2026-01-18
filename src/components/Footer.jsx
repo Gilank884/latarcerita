@@ -20,7 +20,7 @@ const Footer = () => {
                         Partner digital terpercaya untuk transformasi bisnis Anda. Kami menggabungkan kreativitas dan teknologi untuk hasil yang berdampak.
                     </p>
                     <div className="flex gap-4">
-                        <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-sky-600 hover:text-white transition-colors">
+                        <a href="https://www.instagram.com/latar_ceritaa/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-sky-600 hover:text-white transition-colors">
                             <Instagram size={20} />
                         </a>
                         <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-sky-600 hover:text-white transition-colors">
@@ -40,7 +40,7 @@ const Footer = () => {
                     <ul className="space-y-3">
                         <li><a href="#" className="hover:text-sky-400 transition-colors">Website Development</a></li>
                         <li><a href="#" className="hover:text-sky-400 transition-colors">App Development</a></li>
-                        <li><a href="#" className="hover:text-sky-400 transition-colors">Custom Systems (ERP/Odoo)</a></li>
+                        <li><a href="#" className="hover:text-sky-400 transition-colors">Custom Systems (ERP/SaaS)</a></li>
                         <li><a href="#" className="hover:text-sky-400 transition-colors">UI/UX Design</a></li>
                     </ul>
                 </div>
@@ -50,8 +50,8 @@ const Footer = () => {
                     <ul className="space-y-3">
                         <li><a href="#about" className="hover:text-sky-400 transition-colors">Tentang Kami</a></li>
                         <li><a href="#portfolio" className="hover:text-sky-400 transition-colors">Portofolio</a></li>
-                        <li><a href="#contact" className="hover:text-sky-400 transition-colors">Kontak</a></li>
-                        <li><a href="#" className="hover:text-sky-400 transition-colors">Karir</a></li>
+                        <li><a href="#pricing" className="hover:text-sky-400 transition-colors">Harga</a></li>
+                        <li><a href="#services" className="hover:text-sky-400 transition-colors">Layanan</a></li>
                     </ul>
                 </div>
 

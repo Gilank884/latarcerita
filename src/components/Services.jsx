@@ -1,48 +1,55 @@
 import { Monitor, Smartphone, Globe } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
 const services = [
     {
         icon: <Globe size={32} />,
         title: "Website Company Profile",
-        description: "Website profesional yang merepresentasikan identitas, visi, dan kredibilitas perusahaan Anda.",
-        color: "bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white",
-        glowColor: "bg-blue-500"
-    },
-    {
-        icon: <Monitor size={32} />,
-        title: "Web Application",
-        description: "Aplikasi berbasis web dengan fungsionalitas kompleks yang dapat diakses dari mana saja.",
+        description: "Website modern, cepat, dan SEO-friendly untuk membangun kredibilitas brand Anda.",
         color: "bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white",
         glowColor: "bg-sky-500"
     },
     {
+        icon: <Monitor size={32} />,
+        title: "Web Application / Sistem",
+        description: "Solusi sistem kustom dan aplikasi web untuk otomatisasi operasional bisnis Anda.",
+        color: "bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white",
+        glowColor: "bg-indigo-500"
+    },
+    {
         icon: <Smartphone size={32} />,
-        title: "Mobile App",
-        description: "Aplikasi mobile (Android & iOS) yang intuitif untuk menjangkau pengguna di genggaman mereka.",
-        color: "bg-violet-50 text-violet-600 group-hover:bg-violet-600 group-hover:text-white",
-        glowColor: "bg-violet-500"
+        title: "Mobile Application",
+        description: "Aplikasi Android & iOS yang intuitif untuk menjangkau pengguna langsung di tangan mereka.",
+        color: "bg-amber-50 text-amber-600 group-hover:bg-amber-600 group-hover:text-white",
+        glowColor: "bg-amber-500"
     },
 ];
 
 const Services = () => {
     const sectionRef = useRef(null);
-    const cardsRef = useRef([]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.from(cardsRef.current, {
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 70%",
+            gsap.fromTo(".service-card",
+                {
+                    y: 50,
+                    opacity: 0
                 },
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.1,
-                ease: "power3.out"
-            });
+                {
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top 70%",
+                        toggleActions: "play none none none"
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "power3.out"
+                }
+            );
         }, sectionRef);
 
         return () => ctx.revert();
@@ -65,8 +72,7 @@ const Services = () => {
                 {services.map((service, index) => (
                     <div
                         key={index}
-                        ref={addToRefs}
-                        className="group p-8 rounded-2xl border border-slate-100 bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
+                        className="service-card group p-8 rounded-2xl border border-slate-100 bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
                     >
                         {/* Hover Glow - Simplified logic */}
                         <div className={`absolute -right-10 -top-10 w-32 h-32 rounded-full blur-[60px] opacity-0 group-hover:opacity-20 transition-opacity duration-500 ${service.glowColor}`}></div>
