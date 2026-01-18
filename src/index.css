@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --color-primary: #e0f2fe; /* light blue 100 */
+  --color-primary-dark: #bae6fd; /* light blue 200 */
+  --color-accent: #0ea5e9; /* sky 500 */
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+    color: #0f172a; /* slab 900 */
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+/* Custom Utilities for Animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
