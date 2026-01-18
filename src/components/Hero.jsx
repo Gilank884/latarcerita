@@ -1,5 +1,4 @@
-import { useEffect, useRef } from 'react';
-import { ArrowRight, Code, Layout, Rocket } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import GridBackground from './GridBackground';
 
@@ -85,13 +84,13 @@ const Hero = () => {
                         Kami membantu brand Anda tampil profesional dengan website, aplikasi, dan sistem yang modern, cepat, dan efektif.
                     </p>
                     <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-slate-200 group">
+                        <Link to="/start-project" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-slate-200 group">
                             Mulai Proyek
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </a>
-                        <a href="#services" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-white border border-slate-200 text-slate-700 font-semibold hover:border-slate-300 hover:bg-slate-50 transition-all hover:scale-105 active:scale-95">
+                        </Link>
+                        <Link to="/services" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-white border border-slate-200 text-slate-700 font-semibold hover:border-slate-300 hover:bg-slate-50 transition-all hover:scale-105 active:scale-95">
                             Lihat Layanan
-                        </a>
+                        </Link>
                     </div>
                 </div>
 

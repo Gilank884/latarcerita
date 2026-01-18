@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const CTA = () => {
@@ -13,11 +14,11 @@ const CTA = () => {
                     Jangan biarkan ide hebat Anda hanya menjadi wacana. Diskusikan kebutuhan Anda dengan kami dan mari bangun sesuatu yang luar biasa bersama.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-white text-sky-600 font-bold hover:bg-sky-50 transition-all shadow-lg hover:shadow-xl hover:scale-105">
-                        Konsultasi Gratis
-                    </a>
-                    <a href="#" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-sky-700 text-white font-bold border border-sky-500 hover:bg-sky-800 transition-all hover:scale-105">
-                        Hubungi WhatsApp <ArrowRight className="ml-2 w-5 h-5" />
+                    <Link to="/start-project" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-white text-sky-600 font-bold hover:bg-sky-50 transition-all shadow-lg hover:shadow-xl hover:scale-105">
+                        Mulai Proyek Sekarang
+                    </Link>
+                    <a href="https://wa.me/6282332901726" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-sky-700 text-white font-bold border border-sky-500 hover:bg-sky-800 transition-all hover:scale-105">
+                        Konsultasi via WA <ArrowRight className="ml-2 w-5 h-5" />
                     </a>
                 </div>
             </div>

@@ -51,12 +51,12 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/start-project"
             className="px-5 py-2.5 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition-colors"
           >
             Mulai Proyek
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -81,13 +81,13 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/start-project"
             className="inline-block text-center px-5 py-3 rounded-lg bg-slate-900 text-white font-medium hover:bg-slate-800"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Mulai Proyek
-          </a>
+          </Link>
         </div>
       )}
     </nav>

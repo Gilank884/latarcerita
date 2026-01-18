@@ -3,25 +3,15 @@ import gsap from 'gsap';
 
 const team = [
     {
-        name: "Andi Wijaya",
+        name: "Gilang Prasetyo",
         role: "Founder & Lead Developer",
-        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop",
+        image: "/team/gilang.jpg",
     },
     {
-        name: "Siti Rahma",
-        role: "UI/UX Designer",
-        image: "https://images.unsplash.com/photo-1573496359-7013119ac635?q=80&w=200&auto=format&fit=crop",
+        name: "Nurtsani Assyiffatulhayat",
+        role: "Co Founder & AI Analyst",
+        image: "/team/syifa.jpg",
     },
-    {
-        name: "Budi Santoso",
-        role: "Project Manager",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
-    },
-    {
-        name: "Lina Kusuma",
-        role: "Content Strategist",
-        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop",
-    }
 ];
 
 const Team = () => {

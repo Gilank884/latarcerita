@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { animate, createTimeline, stagger } from 'animejs';
 import { ArrowRight, Code, Layout, Rocket, Sparkles } from 'lucide-react';
 
@@ -111,23 +112,23 @@ const HeroAnime = () => {
                     </p>
 
                     <div className="hero-text-el flex flex-col sm:flex-row gap-4 opacity-0">
-                        <a
-                            href="#contact"
+                        <Link
+                            to="/start-project"
                             className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-slate-900 text-white font-semibold shadow-xl shadow-slate-200 hover:bg-slate-800 transition-transform active:scale-95"
                             onMouseEnter={(e) => animate(e.target, { scale: 1.05, duration: 300 })}
                             onMouseLeave={(e) => animate(e.target, { scale: 1, duration: 300 })}
                         >
-                            Mulai Sekarang
+                            Mulai Proyek
                             <ArrowRight className="ml-2 w-5 h-5" />
-                        </a>
-                        <a
-                            href="#services"
+                        </Link>
+                        <Link
+                            to="/services"
                             className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-white border border-slate-200 text-slate-700 font-semibold hover:bg-slate-50 transition-transform active:scale-95"
                             onMouseEnter={(e) => animate(e.target, { scale: 1.05, duration: 300 })}
                             onMouseLeave={(e) => animate(e.target, { scale: 1, duration: 300 })}
                         >
-                            Pelajari Lebih Lanjut
-                        </a>
+                            Lihat Layanan
+                        </Link>
                     </div>
                 </div>
 

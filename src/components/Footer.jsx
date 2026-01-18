@@ -6,8 +6,15 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
 
                 <div className="col-span-1 md:col-span-2">
-                    <a href="#" className="text-2xl font-bold text-white mb-4 block">
-                        Latar<span className="text-sky-500">Cerita</span>
+                    <a href="#" className="flex items-center gap-2 mb-4 group">
+                        <img
+                            src="/Logo.png"
+                            alt="Latar Cerita Logo"
+                            className="h-8 w-auto object-contain transition-transform group-hover:scale-110"
+                        />
+                        <span className="text-2xl font-bold text-white tracking-tight">
+                            Latar<span className="text-sky-500">Cerita</span>
+                        </span>
                     </a>
                     <p className="text-slate-400 mb-6 max-w-sm">
                         Partner digital terpercaya untuk transformasi bisnis Anda. Kami menggabungkan kreativitas dan teknologi untuk hasil yang berdampak.
@@ -22,7 +29,7 @@ const Footer = () => {
                         <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-sky-600 hover:text-white transition-colors">
                             <Twitter size={20} />
                         </a>
-                        <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-sky-600 hover:text-white transition-colors">
+                        <a href="mailto:latarcerita.official@gmail.com" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-sky-600 hover:text-white transition-colors">
                             <Mail size={20} />
                         </a>
                     </div>

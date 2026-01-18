@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import PricingPage from './pages/PricingPage';
 import PortfolioPage from './pages/PortfolioPage';
+import StartProjectPage from './pages/StartProjectPage';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -27,6 +28,7 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/start-project" element={<StartProjectPage />} />
           </Routes>
         </main>
         <Footer />
