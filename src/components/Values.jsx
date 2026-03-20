@@ -3,24 +3,24 @@ import { Target, Users, Lightbulb, Heart } from 'lucide-react';
 const Values = () => {
     const values = [
         {
-            icon: <Target size={24} />,
-            title: "Visi Kami",
-            desc: "Menjadi katalis inovasi digital yang terpercaya bagi UMKM dan perusahaan berkembang di Indonesia."
-        },
-        {
-            icon: <Users size={24} />,
-            title: "Misi Kami",
-            desc: "Menghadirkan solusi teknologi yang user-friendly, estetis, dan fungsional untuk mendukung operasional bisnis."
-        },
-        {
             icon: <Lightbulb size={24} />,
-            title: "Inovasi",
-            desc: "Selalu mengeksplorasi teknologi terbaru untuk memberikan solusi yang paling relevan dan efektif."
+            title: "Kreativitas",
+            desc: "Menghadirkan konsep photobooth yang unik dan segar untuk setiap tema acara Anda."
+        },
+        {
+            icon: <Target size={24} />,
+            title: "Kualitas",
+            desc: "Memberikan hasil foto dan cetakan terbaik dengan standar peralatan profesional."
         },
         {
             icon: <Heart size={24} />,
-            title: "Integritas",
-            desc: "Bekerja dengan transparansi dan kejujuran untuk membangun hubungan jangka panjang dengan klien."
+            title: "Kebahagiaan",
+            desc: "Fokus utama kami adalah menciptakan senyum dan tawa bagi setiap tamu yang hadir."
+        },
+        {
+            icon: <Users size={24} />,
+            title: "Kerja Tim",
+            desc: "Crew yang kompak dan handal memastikan kelancaran operasional di lokasi acara."
         }
     ];
 

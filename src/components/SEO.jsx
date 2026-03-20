@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, image, url }) => {
-    const siteTitle = title || "Latarcerita - Jasa Web & SaaS";
-    const siteDescription = description || "Penyedia landing page, SaaS, dan sistem bisnis digital.";
+    const siteTitle = title || "LatarCerita - Photobooth Profesional untuk Wedding & Event";
+    const siteDescription = description || "LatarCerita menyediakan jasa photobooth profesional dengan kualitas cetak premium dan fitur sharing digital instan.";
     const siteImage = image || "/Bannerlink.png";
     const siteUrl = url || window.location.origin;
 

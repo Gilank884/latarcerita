@@ -40,11 +40,11 @@ const Achievements = () => {
                 <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
                     <div>
                         <h2 className="text-sky-400 font-semibold uppercase tracking-wider mb-2">Pencapaian Kami</h2>
-                        <h3 className="text-3xl md:text-5xl font-bold leading-tight">Membangun Kepercayaan Melalui Hasil Nyata</h3>
+                        <h3 className="text-3xl md:text-5xl font-bold leading-tight">Membangun Kenangan Melalui Hasil Nyata</h3>
                     </div>
                     <div>
                         <p className="text-slate-300 text-lg leading-relaxed">
-                            Kami tidak hanya berbicara tentang kode, kami berbicara tentang dampak. Di balik setiap angka adalah cerita sukses klien yang kami bantu tumbuh dan berkembang di era digital.
+                            Kami tidak hanya mengambil foto, kami mengabadikan momen kebahagiaan. Di balik setiap angka adalah senyum manis tamu undangan yang kami layani dengan sepenuh hati.
                         </p>
                     </div>
                 </div>
@@ -54,28 +54,28 @@ const Achievements = () => {
                         <div className="w-12 h-12 bg-sky-500/20 rounded-lg flex items-center justify-center text-sky-400 mb-4 group-hover:scale-110 transition-transform">
                             <FolderCheck size={28} />
                         </div>
-                        <p className="text-4xl font-bold mb-1">150+</p>
-                        <p className="text-slate-400 text-sm">Proyek Terselesaikan</p>
+                        <p className="text-4xl font-bold mb-1">200+</p>
+                        <p className="text-slate-400 text-sm">Event Terlayani</p>
                     </div>
                     <div ref={addToRefs} className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-700 hover:bg-slate-800 transition-colors group">
                         <div className="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform">
                             <Smile size={28} />
                         </div>
-                        <p className="text-4xl font-bold mb-1">98%</p>
-                        <p className="text-slate-400 text-sm">Kepuasan Klien</p>
+                        <p className="text-4xl font-bold mb-1">99%</p>
+                        <p className="text-slate-400 text-sm">Klien Puas</p>
                     </div>
                     <div ref={addToRefs} className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-700 hover:bg-slate-800 transition-colors group">
                         <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
                             <Trophy size={28} />
                         </div>
-                        <p className="text-4xl font-bold mb-1">12</p>
-                        <p className="text-slate-400 text-sm">Penghargaan Industri</p>
+                        <p className="text-4xl font-bold mb-1">5+</p>
+                        <p className="text-slate-400 text-sm">Tahun Pengalaman</p>
                     </div>
                     <div ref={addToRefs} className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-700 hover:bg-slate-800 transition-colors group">
                         <div className="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center text-amber-400 mb-4 group-hover:scale-110 transition-transform">
                             <Star size={28} />
                         </div>
-                        <p className="text-4xl font-bold mb-1">5.0</p>
+                        <p className="text-4xl font-bold mb-1">4.9</p>
                         <p className="text-slate-400 text-sm">Rating Rata-rata</p>
                     </div>
                 </div>

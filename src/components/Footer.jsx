@@ -17,7 +17,7 @@ const Footer = () => {
                         </span>
                     </a>
                     <p className="text-slate-400 mb-6 max-w-sm">
-                        Partner digital terpercaya untuk transformasi bisnis Anda. Kami menggabungkan kreativitas dan teknologi untuk hasil yang berdampak.
+                        Abadikan setiap momen berharga Anda dengan layanan photobooth profesional. Kami menghadirkan keceriaan dan kenangan instan untuk setiap acara Anda.
                     </p>
                     <div className="flex gap-4">
                         <a href="https://www.instagram.com/latar_ceritaa/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-sky-600 hover:text-white transition-colors">
@@ -38,10 +38,10 @@ const Footer = () => {
                 <div>
                     <h4 className="text-white font-semibold mb-6">Layanan</h4>
                     <ul className="space-y-3">
-                        <li><a href="#" className="hover:text-sky-400 transition-colors">Website Development</a></li>
-                        <li><a href="#" className="hover:text-sky-400 transition-colors">App Development</a></li>
-                        <li><a href="#" className="hover:text-sky-400 transition-colors">Custom Systems (ERP/SaaS)</a></li>
-                        <li><a href="#" className="hover:text-sky-400 transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" className="hover:text-sky-400 transition-colors">Digital Photobooth</a></li>
+                        <li><a href="#" className="hover:text-sky-400 transition-colors">Physical Prints</a></li>
+                        <li><a href="#" className="hover:text-sky-400 transition-colors">Custom Backdrop</a></li>
+                        <li><a href="#" className="hover:text-sky-400 transition-colors">Event Photography</a></li>
                     </ul>
                 </div>
 
@@ -57,7 +57,7 @@ const Footer = () => {
 
             </div>
             <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
-                &copy; {new Date().getFullYear()} Latar Cerita Digital Agency. All rights reserved.
+                &copy; {new Date().getFullYear()} Latar Cerita Photobooth. All rights reserved.
             </div>
         </footer>
     );

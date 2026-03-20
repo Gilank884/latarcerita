@@ -3,12 +3,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
 const steps = [
-    { num: "01", title: "Konsultasi", desc: "Diskusi awal untuk memahami visi, target, dan kebutuhan bisnis Anda secara mendalam." },
-    { num: "02", title: "Estimasi", desc: "Pemberian rincian biaya dan timeline pengerjaan yang transparan tanpa biaya siluman." },
-    { num: "03", title: "Desain", desc: "Perancangan UI/UX yang modern dan eksklusif, memastikan kenyamanan bagi pengguna Anda." },
-    { num: "04", title: "Development", desc: "Proses coding menggunakan teknologi terbaru untuk menghasilkan sistem yang tangguh." },
-    { num: "05", title: "Testing", desc: "Quality assurance ketat untuk memastikan tidak ada bug dan performa tetap optimal." },
-    { num: "06", title: "Launching", desc: "Deployment ke server live dan pendampingan pasca-rilis untuk memastikan sukses." },
+    { num: "01", title: "Konsultasi", desc: "Diskusikan tema acara, lokasi, dan kebutuhan paket yang paling pas untuk Anda." },
+    { num: "02", title: "Booking", desc: "Amankan tanggal acara Anda dengan pembayaran uang muka yang transparan." },
+    { num: "03", title: "Design", desc: "Kami buatkan template frame foto dan backdrop sesuai dengan tema acara Anda." },
+    { num: "04", title: "Setup", desc: "Tim kami datang 1-2 jam sebelum acara untuk memasang alat dan memastikan semua siap." },
+    { num: "05", title: "Showtime", desc: "Tamu Anda bisa mulai berfoto seru dengan berbagai properti unik yang kami sediakan." },
+    { num: "06", title: "Gallery", desc: "Dapatkan akses ke galeri online untuk mendownload semua foto setelah acara selesai." },
 ];
 
 const Process = () => {
@@ -45,9 +45,9 @@ const Process = () => {
 
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-20">
-                    <h2 className="text-sm font-semibold text-sky-500 uppercase tracking-wider mb-2">Workflow System</h2>
+                    <h2 className="text-sm font-semibold text-sky-500 uppercase tracking-wider mb-2">Workflow Layanan</h2>
                     <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Bagaimana Kami Bekerja</h3>
-                    <p className="mt-4 text-slate-600 max-w-2xl mx-auto">Kami mengadaptasi metodologi Agile yang terstruktur namun fleksibel, memastikan setiap iterasi membawa nilai tambah bagi bisnis Anda.</p>
+                    <p className="mt-4 text-slate-600 max-w-2xl mx-auto">Kami memastikan setiap proses berjalan lancar agar Anda tidak perlu khawatir tentang dokumentasi di hari bahagia Anda.</p>
                 </div>
 
                 <div className="grid grid-cols-2 lg:grid-cols-6 gap-8 relative">
@@ -69,7 +69,7 @@ const Process = () => {
 
                 {/* Extra Description Box */}
                 <div className="mt-20 p-8 bg-slate-50 rounded-3xl border border-slate-100 text-center max-w-4xl mx-auto">
-                    <p className="text-lg text-slate-700 italic">"Kami percaya bahwa komunikasi yang baik adalah kunci dari setiap proyek sukses. Oleh karena itu, kami melibatkan Anda di setiap langkah, dari sketsa pertama hingga peluncuran final."</p>
+                    <p className="text-lg text-slate-700 italic">"Kami percaya bahwa setiap senyuman layak diabadikan dengan sempurna. Kami hadir untuk memastikan tamu Anda pulang dengan kenangan yang tak terlupakan."</p>
                 </div>
             </div>
         </section>

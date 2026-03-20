@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { animate, createTimeline, stagger } from 'animejs';
 import gsap from 'gsap';
-import { ArrowRight, Code, Layout, Rocket, Sparkles, ChevronRight } from 'lucide-react';
+import { ArrowRight, Camera, Heart, Sparkles, ChevronRight, Image as ImageIcon, Users } from 'lucide-react';
 
 const HeroAnime = () => {
     const containerRef = useRef(null);
@@ -113,15 +113,15 @@ const HeroAnime = () => {
                 <div className="max-w-2xl relative z-20">
                     <div className="hero-left-anim inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 shadow-sm text-sky-600 text-xs font-semibold uppercase tracking-wider mb-6">
                         <Sparkles size={14} className="text-amber-400" />
-                        <span>Trusted Digital Partner</span>
+                        <span>Premium Event Photobooth</span>
                     </div>
 
                     <h1 className="hero-left-anim text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
-                        Solusi Website, Sistem, dan <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-600 italic">Aplikasi untuk Bisnis</span> Anda.
+                        Abadikan Momen Berharga dengan <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-600 italic">Photobooth Profesional</span> Anda.
                     </h1>
 
                     <p className="hero-left-anim text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
-                        Bangun bisnis lebih profesional dengan teknologi modern dan harga transparan. Kami siap membantu transformasi digital Anda.
+                        Hadirkan keceriaan instan di setiap acara. Dari pernikahan hingga event perusahaan, kami siap mencetak kenangan indah Anda.
                     </p>
 
                     <div className="hero-left-anim flex flex-wrap gap-4">
@@ -129,14 +129,14 @@ const HeroAnime = () => {
                             to="/start-project"
                             className="inline-flex justify-center items-center px-10 py-4 rounded-full bg-slate-900 text-white font-bold shadow-2xl shadow-slate-200 hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 group"
                         >
-                            Mulai Proyek
+                            Pesan Sekarang
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Link>
                         <Link
-                            to="/services"
+                            to="/portfolio"
                             className="inline-flex justify-center items-center px-10 py-4 rounded-full bg-white border border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
                         >
-                            Lihat Paket
+                            Lihat Galeri
                             <ChevronRight size={20} className="text-slate-400" />
                         </Link>
                     </div>
@@ -153,8 +153,8 @@ const HeroAnime = () => {
                         {/* Floating Cards */}
                         <div className="floating-icon bg-white p-4 rounded-2xl shadow-lg border border-slate-50 mb-6 w-2/3 self-start">
                             <div className="flex items-center gap-3 mb-2">
-                                <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center text-orange-500">
-                                    <Layout size={18} />
+                                <div className="w-8 h-8 rounded-lg bg-rose-100 flex items-center justify-center text-rose-500">
+                                    <Heart size={18} />
                                 </div>
                                 <div className="h-2 w-20 bg-slate-200 rounded"></div>
                             </div>
@@ -169,19 +169,19 @@ const HeroAnime = () => {
                                     <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
                                     <div className="w-2 h-2 rounded-full bg-green-400"></div>
                                 </div>
-                                <Rocket size={20} className="text-sky-400" />
+                                <Camera size={20} className="text-sky-400" />
                             </div>
                             <div className="space-y-3 font-mono text-xs opacity-80">
                                 <div className="flex gap-2">
-                                    <span className="text-pink-400">const</span>
-                                    <span className="text-sky-300">future</span>
+                                    <span className="text-pink-400">capture</span>
+                                    <span className="text-sky-300">moment</span>
                                     <span>=</span>
-                                    <span className="text-yellow-300">"loading..."</span>
+                                    <span className="text-yellow-300">"perfect"</span>
                                 </div>
                                 <div className="flex gap-2 pl-4">
                                     <span className="text-purple-400">await</span>
-                                    <span>launch(</span>
-                                    <span className="text-green-400">project</span>
+                                    <span>print(</span>
+                                    <span className="text-green-400">memory</span>
                                     <span>);</span>
                                 </div>
                             </div>
@@ -190,7 +190,7 @@ const HeroAnime = () => {
                         <div className="floating-icon bg-white p-4 rounded-2xl shadow-lg border border-slate-50 mt-6 w-2/3 self-end">
                             <div className="flex items-center gap-3">
                                 <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-500">
-                                    <Code size={18} />
+                                    <ImageIcon size={18} />
                                 </div>
                                 <div>
                                     <div className="h-2 w-24 bg-slate-200 rounded mb-1"></div>

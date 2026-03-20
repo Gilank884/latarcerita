@@ -1,37 +1,37 @@
 import { useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Check, ArrowRight, Globe, Laptop, Smartphone, Zap } from 'lucide-react';
+import { Check, ArrowRight, Image as ImageIcon, Printer, Sparkles, Zap, Heart, Camera } from 'lucide-react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
 const pricingBrief = [
     {
-        category: "Website",
-        icon: <Globe className="text-sky-500" />,
+        category: "Lite",
+        icon: <Heart className="text-rose-500" />,
         packages: [
-            { name: "Paket Awal", price: "1 - 2,5 Juta" },
-            { name: "Paket Berkembang", price: "3 - 5 Juta" },
-            { name: "Paket Profesional", price: "6 - 10 Juta" }
+            { name: "Durasi 2 Jam", price: "2 Juta" },
+            { name: "Unlimited Softcopy", price: "Included" },
+            { name: "Standard Props", price: "Included" }
+        ],
+        accent: "border-rose-100 bg-rose-50/20"
+    },
+    {
+        category: "Standard",
+        icon: <Printer className="text-sky-500" />,
+        packages: [
+            { name: "Durasi 4 Jam", price: "3,5 Juta" },
+            { name: "Unlimited Print", price: "Included" },
+            { name: "Custom Template", price: "Included" }
         ],
         accent: "border-sky-100 bg-sky-50/20"
     },
     {
-        category: "Sistem",
-        icon: <Laptop className="text-indigo-500" />,
+        category: "Premium",
+        icon: <Sparkles className="text-amber-500" />,
         packages: [
-            { name: "Paket Core", price: "5 - 10 Juta" },
-            { name: "Paket Scale", price: "10 - 25 Juta" },
-            { name: "Paket Prime", price: "30 Juta+" }
-        ],
-        accent: "border-indigo-100 bg-indigo-50/20"
-    },
-    {
-        category: "Mobile App",
-        icon: <Smartphone className="text-amber-500" />,
-        packages: [
-            { name: "Paket Spark", price: "8 - 12 Juta" },
-            { name: "Paket Boost", price: "15 - 30 Juta" },
-            { name: "Paket Prime", price: "40 Juta+" }
+            { name: "Full Event", price: "6 Juta+" },
+            { name: "Custom Backdrop", price: "Included" },
+            { name: "Guest Book", price: "Included" }
         ],
         accent: "border-amber-100 bg-amber-50/20"
     }
@@ -68,9 +68,9 @@ const PricingPreview = () => {
         <section ref={containerRef} className="py-24 bg-slate-50 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-sm font-bold text-sky-500 uppercase tracking-[0.3em] mb-4">Investasi Bisnis</h2>
+                    <h2 className="text-sm font-bold text-sky-500 uppercase tracking-[0.3em] mb-4">Investasi Kenangan</h2>
                     <h3 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none mb-6">Paket & <span className="text-slate-400">Harga Terbaik</span></h3>
-                    <p className="text-slate-600 max-w-2xl mx-auto">Tersedia berbagai pilihan paket yang dapat disesuaikan dengan skala dan kebutuhan unik bisnis Anda.</p>
+                    <p className="text-slate-600 max-w-2xl mx-auto">Pilih paket yang paling sesuai dengan kebutuhan acara Anda. Kami menjamin kualitas terbaik untuk setiap senyuman.</p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8 mb-16">

@@ -55,7 +55,7 @@ const Navbar = () => {
             to="/start-project"
             className="px-5 py-2.5 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition-colors"
           >
-            Mulai Proyek
+            Booking Sekarang
           </Link>
         </div>
 
@@ -86,7 +86,7 @@ const Navbar = () => {
             className="inline-block text-center px-5 py-3 rounded-lg bg-slate-900 text-white font-medium hover:bg-slate-800"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Mulai Proyek
+            Booking Sekarang
           </Link>
         </div>
       )}

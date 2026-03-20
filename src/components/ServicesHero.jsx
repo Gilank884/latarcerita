@@ -41,18 +41,18 @@ const ServicesHero = () => {
             <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm text-sky-600 font-medium text-sm mb-8">
                     <Sparkles size={16} className="text-amber-400" />
-                    <span>Solusi Digital End-to-End</span>
+                    <span>Layanan Photobooth Profesional</span>
                 </div>
 
                 <h1 ref={titleRef} className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
-                    Wujudkan Potensi Bisnis Anda dengan <br />
+                    Abadikan Setiap Momen dengan <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-600">
-                        Teknologi Tepat Guna
+                        Kualitas Terbaik
                     </span>
                 </h1>
 
                 <p ref={textRef} className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-                    Kami tidak hanya membuat software. Kami merancang ekosistem digital yang menghubungkan brand Anda dengan audiens, mengotomatisasi operasional, dan mempercepat pertumbuhan bisnis secara berkelanjutan.
+                    Kami menghadirkan pengalaman photobooth yang tak terlupakan untuk setiap jenis acara Anda. Dengan teknologi cetak cepat and hasil foto kualitas studio, setiap tamu akan pulang dengan senyuman and kenangan manis.
                 </p>
 
                 <div className="flex flex-wrapjustify-center gap-4">

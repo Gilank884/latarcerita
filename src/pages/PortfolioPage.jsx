@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import {
-    Code,
-    Smartphone,
+    Camera,
+    Printer,
+    Sparkles,
+    Image as ImageIcon,
     ArrowRight,
     X,
     MessageCircle,
@@ -20,7 +22,8 @@ import {
     Zap,
     ShieldCheck,
     Cpu,
-    Monitor
+    Monitor,
+    Heart
 } from 'lucide-react';
 
 // --- Reusable Mockup Components (Pure Code) ---
@@ -38,7 +41,7 @@ const BrowserMockup = ({ type = "dashboard", color = "indigo" }) => {
                         <div className="w-3 h-3 rounded-full bg-green-400"></div>
                     </div>
                     <div className="flex-1 bg-white border border-slate-200 rounded-lg h-7 flex items-center px-4 text-[10px] text-slate-400 font-mono italic">
-                        https://latarcerita.dev/preview-system
+                        https://gallery.latarcerita.dev/event-cerita
                     </div>
                 </div>
                 <div className="relative bg-white min-h-[350px]">
@@ -165,65 +168,65 @@ const MobileMockup = ({ color = "sky", rotate = "rotate-0" }) => {
 
 const SERVICE_SECTIONS = [
     {
-        id: "web-app",
-        title: "Web Application",
-        subtitle: "SaaS & Dashboard System",
-        desc: "Membangun sistem operasional bisnis yang kompleks dengan arsitektur yang aman, scalable, dan performa tinggi untuk efisiensi tim Anda.",
-        mockup: <BrowserMockup type="dashboard" color="indigo" />,
-        tech: ["React.js", "Node.js", "PostgreSQL", "Google Cloud", "Redis", "Docker"],
+        id: "wedding",
+        title: "Wedding Events",
+        subtitle: "Romantic & Elegant Photobooth",
+        desc: "Menciptakan kenangan indah yang abadi untuk hari bahagia Anda dengan desain frame dan backdrop yang romantis serta elegan.",
+        mockup: <BrowserMockup type="landing" color="indigo" />,
+        tech: ["DSLR Camera", "Studio Lighting", "Custom Frame", "Luxury Backdrop", "Online Gallery"],
         advantages: [
-            "Otomatisasi Laporan & Workflow",
-            "Manajemen User & Hak Akses Detail",
-            "Akses Real-time dari Mana Saja",
-            "Keamanan Data Berlapis"
+            "Template Desain Eksklusif",
+            "Cetak Unlimited & Cepat",
+            "Guest Book & Pen Premium",
+            "Sharing Instan via QR Code"
         ],
         possibilities: [
-            "Custom ERP & CRM Enterprise",
-            "SaaS (Software as a Service)",
-            "System POS & Inventory",
-            "Platform Fintech & Marketplace"
+            "Wedding Reception",
+            "Engagement Session",
+            "Pre-wedding Booth",
+            "Anniversary Party"
         ],
         theme: "indigo"
     },
     {
-        id: "company-profile",
-        title: "Company Profile",
-        subtitle: "Modern Business Website",
-        desc: "Website premium yang dirancang untuk membangun kredibilitas brand, menyampaikan pesan perusahaan dengan visual yang memukau.",
-        mockup: <BrowserMockup type="landing" color="sky" />,
-        tech: ["Next.js", "GSAP Animation", "Tailwind CSS", "Strapi CMS", "Framer Motion"],
+        id: "corporate",
+        title: "Corporate Events",
+        subtitle: "Professional & Branded Experience",
+        desc: "Layanan photobooth profesional untuk kebutuhan branding perusahaan, peluncuran produk, dan gathering kantor.",
+        mockup: <BrowserMockup type="dashboard" color="sky" />,
+        tech: ["High-speed Printer", "Branded Overlay", "Data Collection", "Social Media Feed", "Live Slideshow"],
         advantages: [
-            "Desain UI/UX Eksklusif & Modern",
-            "Optimasi SEO & Google Ranking",
-            "Interaksi & Animasi yang Halus",
-            "Kecepatan Loading Maksimal"
+            "Branding Booth Sepenuhnya",
+            "Koleksi Email & Database",
+            "Social Media Sharing Instan",
+            "Laporan Statistik User"
         ],
         possibilities: [
-            "Corporate Brand Website",
-            "High-end Landing Pages",
-            "Professional Portfolios",
-            "Educational & NGO Platforms"
+            "Product Launch",
+            "Corporate Gathering",
+            "Awarding Night",
+            "Exhibition & Expo"
         ],
         theme: "sky"
     },
     {
-        id: "mobile-app",
-        title: "Mobile Application",
-        subtitle: "iOS & Android Solutions",
-        desc: "Aplikasi mobile dengan performa native yang mulus, dirancang untuk memudahkan akses pelanggan Anda langsung dari genggaman.",
+        id: "social",
+        title: "Social Parties",
+        subtitle: "Fun & Funky Vibes",
+        desc: "Meriahkan pesta ulang tahun, kelulusan, atau reuni Anda dengan berbagai aksesoris seru and hasil foto yang ceria.",
         mockup: <MobileMockup color="sky" />,
-        tech: ["Flutter", "Dart", "Supabase", "Firebase", "App Store & Play Store"],
+        tech: ["Fancy Props", "Interactive Screen", "GIF & Boomerang", "Instant Download", "Fun Backdrop"],
         advantages: [
-            "Performa Native & Ringan",
-            "Fitur Push Notifications",
-            "Integrasi GPS & Hardware Phone",
-            "UX yang Intuifit & Responsif"
+            "Aksesoris (Props) Lucu & Unik",
+            "Crew yang Seru & Ramah",
+            "Setup Booth yang Fleksibel",
+            "Download Langsung ke HP"
         ],
         possibilities: [
-            "Aplikasi Mobile E-Commerce",
-            "Sistem Keanggotaan & Loyalty",
-            "Aplikasi Kurir & Operasional",
-            "Sistem Pembayaran Digital"
+            "Birthday Party",
+            "Graduation Night",
+            "Reunion Party",
+            "Holiday Celebration"
         ],
         theme: "amber"
     }
@@ -309,10 +312,10 @@ const PortfolioPage = () => {
                     Portfolio & Solutions
                 </div>
                 <h1 className="hero-headline text-5xl lg:text-8xl font-black text-slate-900 mb-8 leading-[1.05] tracking-tighter">
-                    Crafting <span className="text-sky-500 underline decoration-indigo-500/20">Solutions</span> <br /> That Scale.
+                    Abadikan <span className="text-sky-500 underline decoration-indigo-500/20">Momen</span> <br /> Tak Terlupakan.
                 </h1>
                 <p className="hero-sub text-lg lg:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed mb-12">
-                    Kami hadir untuk menjembatani ide besar Anda dengan eksekusi teknologi yang tepat, fokus pada hasil yang berdampak dan pengalaman pengguna yang luar biasa.
+                    Kami hadir untuk melengkapi setiap acara Anda dengan pengalaman photobooth yang seru, berkualitas, dan penuh cerita. Dari pernikahan romantis hingga event perusahaan yang profesional.
                 </p>
             </section>
 
@@ -393,9 +396,9 @@ const PortfolioPage = () => {
                 <div className="max-w-6xl mx-auto bg-gradient-to-br from-slate-900 to-indigo-950 rounded-[4rem] p-16 md:p-32 text-center text-white relative shadow-2xl overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(56,189,248,0.1),transparent)]"></div>
                     <div className="relative z-10">
-                        <h2 className="text-4xl md:text-7xl font-black mb-10 tracking-tighter leading-tight">Mulai Transformasi <br /> <span className="text-sky-400">Digital Anda Sekarang?</span></h2>
+                        <h2 className="text-4xl md:text-7xl font-black mb-10 tracking-tighter leading-tight">Siap Meriahkan <br /> <span className="text-sky-400">Acara Anda Sekarang?</span></h2>
                         <p className="text-slate-400 text-lg md:text-xl mb-16 max-w-2xl mx-auto leading-relaxed font-medium">
-                            Diskusikan kebutuhan unik bisnis Anda dan dapatkan solusi berbasis teknologi yang didesain khusus untuk Anda.
+                            Diskusikan kebutuhan konsep photobooth Anda dan amankan tanggal acara Anda sebelum penuh. Konsultasi gratis!
                         </p>
                         <div className="flex flex-wrap gap-6 justify-center">
                             <a href="https://wa.me/6282332901726" className="px-12 py-5 bg-sky-500 text-white font-black rounded-full hover:bg-sky-400 transition-all shadow-2xl shadow-sky-500/20 flex items-center gap-3">

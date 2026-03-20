@@ -15,17 +15,17 @@ const CTA = () => {
 
             <div className="max-w-4xl mx-auto px-6 text-center relative z-10 text-white group">
                 <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter uppercase transition-transform duration-1000 group-hover:scale-105">
-                    Siap Mulai <span className="text-sky-300 italic">Proyek</span> Anda?
+                    Abadikan <span className="text-sky-300 italic">Kebahagiaan</span> Anda
                 </h2>
                 <p className="text-sky-100 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-                    Jangan lewatkan kesempatan untuk mendigitalisasi bisnis Anda sekarang. Konsultasikan kebutuhan Anda dengan tim ahli kami secara gratis.
+                    Jangan biarkan momen berharga Anda berlalu begitu saja. Amankan tanggal acara Anda sekarang dan buat tamu Anda terkesan dengan layanan photobooth kami.
                 </p>
                 <div className="flex flex-wrap gap-6 justify-center">
                     <Link
                         to="/start-project"
                         className="inline-flex justify-center items-center px-10 py-5 rounded-full bg-white text-sky-700 font-black shadow-2xl shadow-sky-900/40 hover:bg-sky-50 transition-all hover:scale-110 active:scale-95 uppercase tracking-widest text-sm"
                     >
-                        Mulai Proyek
+                        Booking Sekarang
                         <ArrowRight className="ml-2 w-5 h-5" />
                     </Link>
                     <a

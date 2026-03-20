@@ -4,27 +4,27 @@ import { Briefcase, Award, TrendingUp, Flag } from 'lucide-react';
 
 const historyData = [
     {
-        year: "2018",
-        title: "Awal Mula Perjalanan",
-        desc: "Latar Cerita didirikan di sebuah ruang kerja kecil dengan satu visi sederhana: mendemokratisasi teknologi berkualitas tinggi untuk UMKM yang sering terabaikan oleh agensi besar. Dengan 2 laptop dan semangat membara, kami memulai proyek pertama kami.",
+        year: "2019",
+        title: "Awal Perjalanan",
+        desc: "Latar Cerita berawal dari kecintaan kami pada dunia fotografi. Kami memulai dengan jasa dokumentasi acara kecil-kecilan dengan misi mengabadikan setiap senyum dengan kualitas terbaik.",
         icon: <Flag size={20} />
     },
     {
-        year: "2020",
-        title: "Ekspansi & Tantangan",
-        desc: "Di tengah pandemi global, kami justru menemukan momentum. Bisnis-bisnis beralih ke digital, dan kami siap membantu. Tim kami tumbuh menjadi 10 orang, dan kami meluncurkan layanan konsultasi transformasi digital penuh.",
+        year: "2021",
+        title: "Inovasi Photobooth",
+        desc: "Melihat antusiasme tamu di setiap acara, kami meluncurkan layanan Photobooth. Kami menjadi salah satu pionir yang menghadirkan kualitas studio di dalam sebuah booth portable.",
         icon: <TrendingUp size={20} />
     },
     {
-        year: "2022",
-        title: "Penghargaan Pertama",
-        desc: "Dedikasi kami pada kualitas desain dan kode membuahkan hasil. Kami memenangkan 'Best SME Tech Partner' di Jakarta Tech Summit. Ini adalah validasi bahwa pendekatan 'human-centric' kami dalam teknologi dihargai.",
+        year: "2023",
+        title: "Era Digital & Share",
+        desc: "Kami merevolusi layanan kami dengan fitur sharing instan via QR Code. Tamu tidak perlu lagi menunggu lama untuk mendapatkan file digital mereka secara langsung.",
         icon: <Award size={20} />
     },
     {
         year: "2024",
-        title: "Menuju Masa Depan",
-        desc: "Kini, Latar Cerita telah menangani lebih dari 50 klien enterprise dan ratusan UMKM. Kami terus berinovasi dengan AI dan Machine Learning untuk memberikan solusi yang lebih cerdas dan prediksi bisnis yang lebih akurat bagi klien kami.",
+        title: "Partner Terpercaya",
+        desc: "Kini Latar Cerita telah dipercaya oleh ratusan pasangan pengantin dan puluhan perusahaan besar di Jakarta untuk memeriahkan momen berharga mereka.",
         icon: <Briefcase size={20} />
     }
 ];

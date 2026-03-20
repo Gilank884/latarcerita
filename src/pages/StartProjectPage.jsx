@@ -2,15 +2,15 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import {
-    Layout,
-    Monitor,
-    Smartphone,
-    Check,
+    Camera,
+    Printer,
+    Sparkles,
+    Image as ImageIcon,
     ArrowRight,
     ChevronLeft,
     MessageCircle,
     Zap,
-    Globe,
+    Heart,
     ShieldCheck,
     Rocket,
     Send,
@@ -21,7 +21,9 @@ import {
     User,
     Mail,
     Menu,
-    ChevronRight
+    ChevronRight,
+    Calendar,
+    MapPin
 } from 'lucide-react';
 
 // --- Reusable Mockup Components (internal to this page for modularity) ---
@@ -106,28 +108,28 @@ const MobileMockupSmall = ({ color = "sky" }) => {
 
 const SERVICE_CARDS = [
     {
-        id: 'web-profile',
-        title: "Website Company Profile",
+        id: 'digital',
+        title: "Paket Digital (Lite)",
         mockup: <BrowserMockup type="landing" color="sky" />,
-        desc: "Visual memukau untuk membangun kredibilitas brand Anda.",
+        desc: "Tanpa cetak fisik, file foto langsung di tangan tamu via QR Code.",
         color: "bg-sky-500",
         shadow: "shadow-sky-500/10",
         accent: "text-sky-600"
     },
     {
-        id: 'web-app',
-        title: "Web Application / Sistem",
+        id: 'standard',
+        title: "Paket Cetak (Standard)",
         mockup: <BrowserMockup type="dashboard" color="indigo" />,
-        desc: "Solusi otomatisasi workflow & manajemen operasional bisnis.",
+        desc: "Layanan cetak unlimited yang selalu menjadi favorit tamu undangan.",
         color: "bg-indigo-600",
         shadow: "shadow-indigo-600/10",
         accent: "text-indigo-600"
     },
     {
-        id: 'mobile-app',
-        title: "Mobile Application",
+        id: 'premium',
+        title: "Paket Full (Custom)",
         mockup: <MobileMockupSmall color="sky" />,
-        desc: "Aplikasi Android & iOS native langsung di tangan pelanggan.",
+        desc: "Solusi lengkap dengan kustomisasi backdrop dan merchandise.",
         color: "bg-amber-500",
         shadow: "shadow-amber-500/10",
         accent: "text-amber-600"
@@ -135,28 +137,25 @@ const SERVICE_CARDS = [
 ];
 
 const PACKAGES = {
-    'web-profile': [
-        { id: 'basic', name: 'Paket Awal', priceText: '1 - 2,5 Juta', price: 1000000, features: ['Single Page / Landing Page Responsif', 'Setup Domain & Hosting 1 Tahun', 'Integrasi WhatsApp & Sosial Media', 'Optimasi Kecepatan Basic', 'Revisi Desain Minor 2x'] },
-        { id: 'pro', name: 'Paket Berkembang', priceText: '3 - 5 Juta', price: 3000000, features: ['Multi-page (Beranda, Layanan, Kontak, dll)', 'Desain Modern & Custom Branding', 'Sistem Manajemen Konten (CMS)', 'SEO Setup Dasar (Google Indexing)', 'Revisi Desain Minor 3x'] },
-        { id: 'enterprise', name: 'Paket Profesional', priceText: '6 - 10 Juta', price: 6000000, features: ['Desain UI/UX Eksklusif & Animasi', 'Fitur Blog / Artikel / Galeri Dinamis', 'Optimasi Kecepatan & Keamanan Lanjutan', 'Analytics Dashboard Terintegrasi', 'Prioritas Support & Maintenance 1 Bulan'] }
+    'digital': [
+        { id: '2jam', name: 'Lite 2 Jam', priceText: '2 Juta', price: 2000000, features: ['2 Jam Operasional', 'Unlimited Softcopy via QR', 'Standard Photo Props', '1 Crew Profesional', 'Online Gallery 1 Bulan'] },
+        { id: '3jam', name: 'Lite 3 Jam', priceText: '2.8 Juta', price: 2800000, features: ['3 Jam Operasional', 'Unlimited Softcopy via QR', 'Standard Photo Props', '1 Crew Profesional', 'Online Gallery 1 Bulan'] },
     ],
-    'web-app': [
-        { id: 'basic', name: 'Paket Core', priceText: '5 - 10 Juta', price: 5000000, features: ['Manajemen Data CRUD Sederhana', 'Autentikasi User (Login/Register)', 'Dashboard Admin Basic', 'Export Data (Excel/PDF)', 'Setup Database Relasional'] },
-        { id: 'pro', name: 'Paket Scale', priceText: '10 - 25 Juta', price: 10000000, features: ['Manajemen Role & Akses Kompleks', 'Integrasi API Pihak Ketiga', 'Laporan Statistik & Grafik Dinamis', 'Sistem Notifikasi Realtime', 'Deployment VPS & Security Hardening'] },
-        { id: 'enterprise', name: 'Paket Prime', priceText: '30 Juta+', price: 30000000, features: ['Arsitektur Microservices Scalable', 'Multi-tenancy (SaaS Architecture)', 'Payment Gateway & Billing System', 'Audit Log & Keamanan Tingkat Lanjut', 'SLA Support & Dedicated Server Setup'] }
+    'standard': [
+        { id: '2jam', name: 'Standard 2 Jam', priceText: '2.5 Juta', price: 2500000, features: ['2 Jam Operasional', 'Unlimited High Quality Prints', 'Custom Template Frame', 'Standard Backdrop', '2 Crew Profesional'] },
+        { id: '4jam', name: 'Standard 4 Jam', priceText: '4 Juta', price: 4000000, features: ['4 Jam Operasional', 'Unlimited High Quality Prints', 'Custom Template Frame', 'Standard Backdrop', '2 Crew Profesional'] },
     ],
-    'mobile-app': [
-        { id: 'basic', name: 'Paket Spark', priceText: '8 - 12 Juta', price: 8000000, features: ['Tampilan UI Mobile-First Modern', 'Fitur Informasi Statis & Dinamis', 'Push Notification Dasar', 'Publish ke Google Play Store', 'API Integration Basic'] },
-        { id: 'pro', name: 'Paket Boost', priceText: '15 - 30 Juta', price: 15000000, features: ['User Account & Profile Management', 'Fitur Transaksi / Order', 'Integrasi Maps / Lokasi GPS', 'Chat System / Messaging', 'Publish Play Store & App Store'] },
-        { id: 'enterprise', name: 'Paket Prime', priceText: '40 Juta+', price: 40000000, features: ['Native / Hybrid High-Perf', 'Algoritma Kustom / AI Integration', 'Realtime Tracking & Complex Logic', 'Payment Gateway Integration', 'Maintenance & Update Berkala'] }
+    'premium': [
+        { id: 'full', name: 'Premium Special', priceText: '6 Juta', price: 6000000, features: ['6 Jam Operasional', 'Unlimited Prints + Softcopy', 'Custom Backdrop & Props', 'Guest Book & Pen', 'Social Media Station'] },
+        { id: 'custom', name: 'Custom Event', priceText: 'Kontak Kami', price: 0, features: ['Durasi Fleksibel', 'Branding Booth Sepenuhnya', 'Overlay Video / GIF', 'Advanced Analytics', 'Dedicated Event Manager'] }
     ]
 };
 
 const ADDONS = [
-    { id: 'api', name: 'Integrasi API Pihak ke-3', priceText: '1 - 3 Juta', price: 1000000 },
-    { id: 'payment', name: 'Payment Gateway Integration', priceText: '2 - 5 Juta', price: 2000000 },
-    { id: 'chat', name: 'Realtime Chat / Notif', priceText: '2 - 6 Juta', price: 2000000 },
-    { id: 'seo', name: 'Full SEO Optimization', priceText: 'Kontak Kami', price: 0 },
+    { id: 'extra', name: 'Ekstra 1 Jam Operasional', priceText: '500 Ribu', price: 500000 },
+    { id: 'custom-props', name: 'Custom Props (Handheld)', priceText: '300 Ribu', price: 300000 },
+    { id: 'guestbook', name: 'Luxury Guestbook', priceText: '400 Ribu', price: 400000 },
+    { id: 'transport', name: 'Transport Luar Jakarta', priceText: 'Kontak Kami', price: 0 },
 ];
 
 const StartProjectPage = () => {
@@ -169,7 +168,7 @@ const StartProjectPage = () => {
     const [projectType, setProjectType] = useState(null);
     const [selectedPackage, setSelectedPackage] = useState(null);
     const [selectedAddons, setSelectedAddons] = useState([]);
-    const [formData, setFormData] = useState({ name: '', company: '', email: '', brief: '' });
+    const [formData, setFormData] = useState({ name: '', phone: '', email: '', date: '', location: '', brief: '' });
 
     // --- ANIMATIONS ---
 
@@ -329,17 +328,24 @@ const StartProjectPage = () => {
                                 className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:bg-white outline-none transition-all font-medium"
                             />
                             <input
-                                type="text" placeholder="Nama Perusahaan (Optional)"
-                                value={formData.company} onChange={e => setFormData({ ...formData, company: e.target.value })}
+                                type="text" placeholder="Nomor WhatsApp"
+                                value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })}
                                 className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:bg-white outline-none transition-all font-medium"
                             />
-                            <input
-                                type="email" placeholder="Alamat Email"
-                                value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })}
-                                className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:bg-white outline-none transition-all font-medium"
-                            />
+                            <div className="grid grid-cols-2 gap-4">
+                                <input
+                                    type="date" placeholder="Tanggal Acara"
+                                    value={formData.date} onChange={e => setFormData({ ...formData, date: e.target.value })}
+                                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:bg-white outline-none transition-all font-medium"
+                                />
+                                <input
+                                    type="text" placeholder="Lokasi Acara"
+                                    value={formData.location} onChange={e => setFormData({ ...formData, location: e.target.value })}
+                                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:bg-white outline-none transition-all font-medium"
+                                />
+                            </div>
                             <textarea
-                                placeholder="Jelaskan singkat kebutuhan proyek Anda..."
+                                placeholder="Pesan tambahan atau detail tema acara..."
                                 rows={4}
                                 value={formData.brief} onChange={e => setFormData({ ...formData, brief: e.target.value })}
                                 className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:bg-white outline-none transition-all font-medium"
@@ -528,7 +534,7 @@ const StartProjectPage = () => {
                         ) : (
                             <button
                                 onClick={() => {
-                                    const message = `Halo Latar Cerita, saya ${formData.name} ingin memesan layanan ${SERVICE_CARDS.find(c => c.id === projectType)?.title} (${selectedPackage?.name}). Estimasi total: ${formatPrice(calculateTotal())}. Brief: ${formData.brief}`;
+                                    const message = `Halo Latar Cerita, saya ${formData.name} ingin memesan layanan ${SERVICE_CARDS.find(c => c.id === projectType)?.title} (${selectedPackage?.name}) untuk tanggal ${formData.date} di ${formData.location}. Estimasi total: ${formatPrice(calculateTotal())}. Pesan: ${formData.brief}`;
                                     window.open(`https://wa.me/6282332901726?text=${encodeURIComponent(message)}`, '_blank');
                                 }}
                                 className="px-14 py-6 bg-emerald-500 text-white font-black rounded-full shadow-2xl shadow-emerald-500/30 hover:bg-emerald-400 hover:scale-105 active:scale-95 transition-all flex items-center gap-4 text-lg overflow-hidden relative group"

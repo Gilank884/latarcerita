@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import { Layout, Smartphone, Globe, Search, Menu, Bell, Home, User, Mail, ArrowRight } from 'lucide-react';
+import { Layout, Smartphone, Globe, Search, Menu, Bell, Home, User, Mail, ArrowRight, Heart, Camera, PartyPopper } from 'lucide-react';
 
 const ServiceShowcase = () => {
     const sectionRef = useRef(null);
@@ -57,8 +57,8 @@ const ServiceShowcase = () => {
         <section ref={sectionRef} className="py-20 bg-slate-50 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-20">
-                    <h2 className="text-sm font-semibold text-sky-500 uppercase tracking-wider mb-2">Platform Compatibility</h2>
-                    <h3 className="text-3xl font-bold text-slate-900">Digital Experience di Berbagai Perangkat</h3>
+                    <h2 className="text-sm font-semibold text-sky-500 uppercase tracking-wider mb-2">Event Categorization</h2>
+                    <h3 className="text-3xl font-bold text-slate-900">Pengalaman Photobooth untuk Setiap Acara</h3>
                 </div>
 
                 <div className="space-y-32">
@@ -109,29 +109,29 @@ const ServiceShowcase = () => {
 
                             {/* Label */}
                             <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-slate-500 font-medium flex items-center gap-2">
-                                <Globe size={20} /> Website Company Profile
+                                <Heart size={20} /> Wedding Events
                             </div>
                         </div>
 
                         <div>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 text-orange-600 text-xs font-semibold uppercase tracking-wider mb-6">
-                                <Globe size={14} /> Website Company Profile
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 text-rose-600 text-xs font-semibold uppercase tracking-wider mb-6">
+                                <Heart size={14} /> Wedding Events
                             </div>
                             <h4 className="text-3xl font-bold text-slate-900 mb-6">
-                                Representasi Digital Identitas Perusahaan
+                                Sentuhan Romantis di Hari Bahagia
                             </h4>
                             <p className="text-slate-600 text-lg leading-relaxed mb-6">
-                                Website profesional yang dirancang untuk membangun kredibilitas dan kepercayaan. Tampilkan visi, misi, dan keunggulan bisnis Anda kepada dunia dengan desain elegan dan informatif.
+                                Jadikan pesta pernikahan Anda tak terlupakan dengan booth yang elegan. Kami menyediakan template desain custom yang sesuai dengan tema pernikahan Anda.
                             </p>
                             <ul className="space-y-4">
                                 {[
-                                    "Desain responsif & elegan",
-                                    "Optimasi SEO untuk visibilitas maksimal",
-                                    "Struktur konten yang jelas & profesional",
-                                    "Integrasi kontak & lokasi bisnis"
+                                    "Template frame foto custom eksklusif",
+                                    "Pilihan backdrop yang elegan dan mewah",
+                                    "Aksesoris (props) bertema pernikahan",
+                                    "Guest book premium untuk cetakan foto tamu"
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-center gap-3 text-slate-700">
-                                        <div className="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 shrink-0">
+                                        <div className="w-6 h-6 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 shrink-0">
                                             <ArrowRight size={14} />
                                         </div>
                                         {item}
@@ -145,7 +145,7 @@ const ServiceShowcase = () => {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="order-2 lg:order-1">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-semibold uppercase tracking-wider mb-6">
-                                <Layout size={14} /> Web Application
+                                <Camera size={14} /> Corporate Events
                             </div>
                             <h4 className="text-3xl font-bold text-slate-900 mb-6">
                                 Dashboard Kuat untuk Manajemen Bisnis
@@ -180,7 +180,7 @@ const ServiceShowcase = () => {
                                         <div className="w-3 h-3 rounded-full bg-green-400"></div>
                                     </div>
                                     <div className="flex-1 bg-white border border-slate-200 rounded-md h-8 flex items-center px-3 text-xs text-slate-400">
-                                        latarcerita.com/dashboard
+                                        latarcerita.com/event-gallery
                                     </div>
                                 </div>
 
@@ -218,7 +218,7 @@ const ServiceShowcase = () => {
 
                             {/* Label */}
                             <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-slate-500 font-medium flex items-center gap-2">
-                                <Layout size={20} /> Web Application
+                                <Camera size={20} /> Corporate Events
                             </div>
                         </div>
                     </div>
@@ -235,7 +235,7 @@ const ServiceShowcase = () => {
                                     {/* Header */}
                                     <div className="flex justify-between items-center mb-6">
                                         <Menu size={20} className="text-slate-600" />
-                                        <span className="font-bold text-slate-900">My App</span>
+                                        <span className="font-bold text-slate-900">LatarCerita</span>
                                         <div className="relative">
                                             <Bell size={20} className="text-slate-600" />
                                             <div className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border border-white"></div>
@@ -299,24 +299,24 @@ const ServiceShowcase = () => {
                         </div>
 
                         <div>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 text-sky-600 text-xs font-semibold uppercase tracking-wider mb-6">
-                                <Smartphone size={14} /> Mobile Apps
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-600 text-xs font-semibold uppercase tracking-wider mb-6">
+                                <PartyPopper size={14} /> Social & Parties
                             </div>
                             <h4 className="text-3xl font-bold text-slate-900 mb-6">
-                                Akses Bisnis dalam Genggaman
+                                Keseruan Tanpa Batas di Setiap Pesta
                             </h4>
                             <p className="text-slate-600 text-lg leading-relaxed mb-6">
-                                Tetap terhubung dengan bisnis Anda di mana saja. Aplikasi mobile native (iOS & Android) memberikan performa cepat dan pengalaman pengguna yang intuitif.
+                                Ulang tahun, reuni, atau pesta kelulusan jadi lebih ramai. Kami membawa berbagai aksesoris (props) lucu yang akan membuat tamu Anda tertawa riang.
                             </p>
                             <ul className="space-y-4">
                                 {[
-                                    "Notifikasi Real-time",
-                                    "Akses Offline Mode",
-                                    "Integrasi GPS & Kamera",
-                                    "UI/UX Native yang Responsif"
+                                    "Puluhan pilihan aksesoris (props) seru",
+                                    "Online gallery yang bisa diakses selamanya",
+                                    "Pilihan format cetak Strip atau 4R",
+                                    "Crew yang friendly dan mood booster"
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-center gap-3 text-slate-700">
-                                        <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center text-sky-600 shrink-0">
+                                        <div className="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 shrink-0">
                                             <ArrowRight size={14} />
                                         </div>
                                         {item}

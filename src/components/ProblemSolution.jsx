@@ -1,22 +1,22 @@
 import { useLayoutEffect, useRef } from 'react';
-import { AlertCircle, CheckCircle2, XCircle, ArrowRight, Zap, Shield, Smartphone, Monitor, Globe } from 'lucide-react';
+import { AlertCircle, CheckCircle2, XCircle, ArrowRight, Zap, Shield, Camera, Printer, Sparkles, Palette, Share2 } from 'lucide-react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
 const problems = [
-    { id: 1, text: "Belum punya website profesional", desc: "Melewatkan ribuan potensi klien di dunia digital." },
-    { id: 2, text: "Website tidak meyakinkan", desc: "Desain kuno membuat klien ragu dengan bisnis Anda." },
-    { id: 3, text: "Sistem kerja masih manual", desc: "Banyak waktu terbuang untuk proses repetitif." },
-    { id: 4, text: "Data berantakan & sulit dicari", desc: "Informasi penting sering hilang saat dibutuhkan." },
-    { id: 5, text: "Sulit mengelola operasional bisnis", desc: "Pusing dengan manajemen yang tidak terintegrasi." },
+    { id: 1, text: "Pencahayaan Acara yang Kurang", desc: "Foto tamu jadi buram dan gelap, merusak momen berharga." },
+    { id: 2, text: "Foto Sulit Dibagikan", desc: "Tamu harus menunggu lama atau kesulitan mendapatkan file foto." },
+    { id: 3, text: "Tidak Ada Kenangan Fisik", desc: "Momen hanya tersimpan di HP dan mudah terlupakan begitu saja." },
+    { id: 4, text: "Suasana Acara yang Kaku", desc: "Kurangnya interaksi seru yang bisa mencairkan suasana tamu." },
+    { id: 5, text: "Antrian Foto yang Membosankan", desc: "Proses foto yang lambat membuat tamu malas mengantri." },
 ];
 
 const solutions = [
-    { id: 1, text: "Website Modern & Cepat", icon: <Globe className="text-sky-500" />, desc: "Tampil profesional dengan performa maksimal." },
-    { id: 2, text: "Sistem Sesuai Alur Bisnis", icon: <Monitor className="text-indigo-500" />, desc: "Otomasi yang dirancang khusus untuk Anda." },
-    { id: 3, text: "Aplikasi Mudah Digunakan", icon: <Smartphone className="text-amber-500" />, desc: "User experience yang ramah untuk siapa saja." },
-    { id: 4, text: "Bisa Custom Sesuai Kebutuhan", icon: <Zap className="text-purple-500" />, desc: "Fitur yang berkembang bersama bisnis Anda." },
-    { id: 5, text: "Harga Transparan & Jelas", icon: <Shield className="text-emerald-500" />, desc: "Investasi terukur tanpa biaya tersembunyi." },
+    { id: 1, text: "Lighting Studio Pro", icon: <Camera className="text-sky-500" />, desc: "Hasil foto tajam dan cerah dalam kondisi cahaya apapun." },
+    { id: 2, text: "Instant Sharing QR", icon: <Share2 className="text-indigo-500" />, desc: "Tamu bisa langsung download foto ke HP saat itu juga." },
+    { id: 3, text: "Cetak Kualitas Premium", icon: <Printer className="text-amber-500" />, desc: "Kertas foto berkualitas tinggi yang tahan lama bertahun-tahun." },
+    { id: 4, text: "Template & Props Custom", icon: <Palette className="text-purple-500" />, desc: "Desain frame dan aksesoris yang sesuai dengan tema acara." },
+    { id: 5, text: "Layanan Crew Ramah", icon: <Sparkles className="text-emerald-500" />, desc: "Tim profesional yang siap membantu tamu bergaya seru." },
 ];
 
 const ProblemSolution = () => {
@@ -82,8 +82,8 @@ const ProblemSolution = () => {
                             <h2 className="text-sm font-bold text-red-500 uppercase tracking-widest mb-4 flex items-center gap-2">
                                 <AlertCircle size={18} /> Tantangan Bisnis
                             </h2>
-                            <h3 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
-                                Masalah yang Sering <br /> <span className="text-slate-400 italic">Dihadapi Bisnis</span>
+                             <h3 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
+                                Masalah yang Sering <br /> <span className="text-slate-400 italic">Ditemui di Acara</span>
                             </h3>
                         </div>
 
@@ -109,10 +109,10 @@ const ProblemSolution = () => {
                     <div className="solution-container">
                         <div className="mb-12">
                             <h2 className="text-sm font-bold text-sky-500 uppercase tracking-widest mb-4 flex items-center gap-2">
-                                <CheckCircle2 size={18} /> Solusi Digital
+                                <CheckCircle2 size={18} /> Solusi Kami
                             </h2>
                             <h3 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
-                                Transformasi Menuju <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-600 italic">Masa Depan Digital</span>
+                                Ciptakan Kenangan <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-600 italic">Abadi Bersama Kami</span>
                             </h3>
                         </div>
 

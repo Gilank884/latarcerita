@@ -90,12 +90,12 @@ const About = () => {
                             ref={floatingCardRef}
                             className="absolute -bottom-8 -right-8 z-30 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-4 max-w-[200px]"
                         >
-                            <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 shrink-0">
+                            <div className="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center text-rose-600 shrink-0">
                                 <Award size={24} />
                             </div>
                             <div>
                                 <p className="text-xs text-slate-500 font-medium">Pengalaman</p>
-                                <p className="text-sm font-bold text-slate-900">10+ Tahun</p>
+                                <p className="text-sm font-bold text-slate-900">5+ Tahun</p>
                             </div>
                         </div>
 
@@ -105,10 +105,10 @@ const About = () => {
 
                     <div ref={contentRef}>
                         <h2 className="text-sm font-semibold text-sky-500 uppercase tracking-wider mb-2">Tentang Kami</h2>
-                        <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Mitra Digital untuk Pertumbuhan Bisnis Anda</h3>
+                        <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Abadikan Setiap Cerita dalam Satu Cetakan</h3>
 
                         <p className="text-slate-600 leading-relaxed mb-6">
-                            Latar Cerita lahir dari semangat untuk membantu bisnis menjembatani kesenjangan digital. Kami bukan sekadar vendor, melainkan mitra strategis yang menerjemahkan visi Anda menjadi solusi teknologi yang nyata dan berdampak.
+                            Latar Cerita hadir untuk melengkapi momen spesial Anda dengan layanan photobooth yang seru, modern, dan berkualitas tinggi. Kami percaya bahwa setiap acara memiliki cerita unik yang layak untuk diabadikan secara instan dan bermakna.
                         </p>
 
                         <div className="space-y-8 mt-8">
@@ -119,7 +119,7 @@ const About = () => {
                                 <div>
                                     <h4 className="text-lg font-semibold text-slate-900 mb-2">Visi Kami</h4>
                                     <p className="text-slate-600 text-sm leading-relaxed">
-                                        Menjadi kekuatan pendorong utama transformasi digital di Indonesia, memberdayakan setiap entitas bisnis—dari skala mikro hingga korporasi—untuk mencapai potensi maksimal mereka melalui teknologi yang inovatif, berkelanjutan, dan relevan dengan perkembangan zaman.
+                                        Menjadi vendor photobooth pilihan utama di Indonesia yang memberikan pengalaman tak terlupakan melalui teknologi fotografi yang inovatif, kreatif, dan pelayanan yang hangat di setiap momen berharga.
                                     </p>
                                 </div>
                             </div>
@@ -131,13 +131,13 @@ const About = () => {
                                 <div>
                                     <h4 className="text-lg font-semibold text-slate-900 mb-2">Misi Kami</h4>
                                     <p className="text-slate-600 text-sm leading-relaxed mb-2">
-                                        1. <strong>Inovasi Tanpa Henti:</strong> Terus mengeksplorasi dan mengadopsi teknologi terbaru untuk memberikan solusi terbaik bagi klien.
+                                        1. <strong>Kualitas Tanpa Kompromi:</strong> Memberikan hasil cetak fisik dan file digital dengan kualitas terbaik untuk setiap tamu undangan.
                                     </p>
                                     <p className="text-slate-600 text-sm leading-relaxed mb-2">
-                                        2. <strong>Kolaborasi Bermakna:</strong> Membangun hubungan kemitraan jangka panjang yang didasarkan pada kepercayaan, transparansi, dan tujuan bersama.
+                                        2. <strong>Pelayanan Ramah & Hangat:</strong> Menghadirkan crew yang ceria dan suportif untuk memandu tamu bergaya di depan kamera.
                                     </p>
                                     <p className="text-slate-600 text-sm leading-relaxed">
-                                        3. <strong>Edukasi Digital:</strong> Tidak hanya membangun sistem, tetapi juga memberikan pemahaman teknologi kepada klien kami untuk kemandirian digital mereka.
+                                        3. <strong>Inovasi Fitur:</strong> Terus mengembangkan fitur unik seperti sharing QR Code instan dan kustomisasi template yang luas.
                                     </p>
                                 </div>
                             </div>
@@ -146,16 +146,16 @@ const About = () => {
                         <div className="mt-10 pt-8 border-t border-slate-200">
                             <div className="grid grid-cols-3 gap-8">
                                 <div>
-                                    <p className="text-3xl font-bold text-slate-900">50+</p>
-                                    <p className="text-xs text-slate-500 mt-1">Proyek Selesai</p>
+                                    <p className="text-3xl font-bold text-slate-900">200+</p>
+                                    <p className="text-xs text-slate-500 mt-1">Event Selesai</p>
                                 </div>
                                 <div>
-                                    <p className="text-3xl font-bold text-slate-900">30+</p>
+                                    <p className="text-3xl font-bold text-slate-900">100+</p>
                                     <p className="text-xs text-slate-500 mt-1">Klien Puas</p>
                                 </div>
                                 <div>
-                                    <p className="text-3xl font-bold text-slate-900">24/7</p>
-                                    <p className="text-xs text-slate-500 mt-1">Support</p>
+                                    <p className="text-3xl font-bold text-slate-900">5+</p>
+                                    <p className="text-xs text-slate-500 mt-1">Tahun Pengalaman</p>
                                 </div>
                             </div>
                         </div>

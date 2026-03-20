@@ -4,22 +4,22 @@ import gsap from 'gsap';
 
 const testimonials = [
     {
-        text: "Latar Cerita benar-benar memahami visi bisnis kami. Website baru kami tidak hanya terlihat bagus, tapi juga meningkatkan konversi penjualan secara signifikan.",
-        author: "Budi Santoso",
-        role: "CEO, Retail Maju Jaya",
-        initial: "B"
+        text: "Photobooth dari Latar Cerita beneran jadi bintang di acara pernikahan kami! Antriannya tertib karena cetaknya cepet banget, dan hasilnya tajam banget.",
+        author: "Aditya & Sekar",
+        role: "Pasangan Pengantin",
+        initial: "A"
     },
     {
-        text: "Kerja sama yang sangat profesional. Tim sangat responsif terhadap masukan dan hasil akhirnya melebihi ekspektasi kami. Sistem SaaS yang dibangun sangat membantu operasional.",
-        author: "Sarah Widya",
-        role: "Operational Manager, Logistik Cepat",
-        initial: "S"
-    },
-    {
-        text: "Desain UI/UX aplikasinya sangat modern dan intuitif. Pengguna kami sangat menyukainya. Terima kasih Latar Cerita!",
-        author: "Rizky Pratama",
-        role: "Founder, Startup Kita",
+        text: "Sangat profesional. Tim datang tepat waktu dan setup-nya rapi banget. Template foto yang dibikinin juga cantik dan sesuai banget sama tema kantor kami.",
+        author: "Rina Wijaya",
+        role: "Event Organizer, Bank Mandiri",
         initial: "R"
+    },
+    {
+        text: "Fitur download via QR Code-nya juara! Tamu undangan langsung bisa upload ke Instagram tanpa nunggu lama. Sangat direkomendasikan!",
+        author: "Kevin Sanjaya",
+        role: "Birthday Celebrant",
+        initial: "K"
     }
 ];
 

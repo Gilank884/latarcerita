@@ -1,71 +1,53 @@
-import { Check, Laptop, Smartphone, Globe, Layers, ShieldCheck, Clock, Zap, MessageCircle, ArrowRight, Layout, Menu, Bell, Home, Mail, User, Search } from 'lucide-react';
+import { Check, Printer, Sparkles, Image as ImageIcon, Layers, ShieldCheck, Clock, Zap, MessageCircle, ArrowRight, Layout, Menu, Bell, Home, Mail, User, Search, Heart, Camera } from 'lucide-react';
 
 // Data defined outside to prevent re-creation and potential shadowing issues
 const SERVICES_DATA = [
-    { icon: <Globe size={32} />, title: "Website Company Profile", desc: "Representasi digital profesional untuk membangun kredibilitas bisnis Anda." },
-    { icon: <Laptop size={32} />, title: "Web Application / SaaS", desc: "Sistem kompleks berbasis web untuk efisiensi operasional dan layanan pelanggan." },
-    { icon: <Smartphone size={32} />, title: "Mobile Application", desc: "Aplikasi Android & iOS untuk menjangkau pelanggan di genggaman mereka." },
+    { icon: <ImageIcon size={32} />, title: "Digital Photobooth", desc: "Layanan photobooth digital dengan fitur sharing instan via QR Code dan gallery online." },
+    { icon: <Printer size={32} />, title: "Standard Printing", desc: "Cetak foto instan kualitas lab profesional dalam hitungan detik untuk tamu Anda." },
+    { icon: <Sparkles size={32} />, title: "Custom Experience", desc: "Custom template, backdrop, dan props yang disesuaikan dengan tema acara Anda." },
 ];
 
 const PRICING_DATA = {
-    web: [
+    lite: [
         {
-            name: "Paket Awal",
-            price: "1 - 2,5 Juta",
-            desc: "Solusi cepat untuk bisnis yang baru mulai tampil online.",
-            features: ["Single Page / Landing Page Responsif", "Setup Domain & Hosting 1 Tahun", "Integrasi WhatsApp & Sosial Media", "Optimasi Kecepatan Basic", "Revisi Desain Minor 2x"]
+            name: "Lite 2 Jam",
+            price: "2 Juta",
+            desc: "Pilihan hemat untuk acara kecil atau durasi singkat.",
+            features: ["Durasi 2 Jam Operasional", "Unlimited Softcopy via QR Code", "Standard Photo Props", "1 Crew Profesional", "Gallery Online 1 Bulan"]
         },
         {
-            name: "Paket Berkembang",
-            price: "3 - 5 Juta",
-            desc: "Pilihan ideal untuk UMKM yang ingin meningkatkan kredibilitas.",
-            features: ["Multi-page (Beranda, Layanan, Kontak, dll)", "Desain Modern & Custom Branding", "Sistem Manajemen Konten (CMS)", "SEO Setup Dasar (Google Indexing)", "Revisi Desain Minor 3x"]
-        },
-        {
-            name: "Paket Profesional",
-            price: "6 - 10 Juta",
-            desc: "Website premium dengan performa dan interaktivitas tinggi.",
-            features: ["Desain UI/UX Eksklusif & Animasi", "Fitur Blog / Artikel / Galeri Dinamis", "Optimasi Kecepatan & Keamanan Lanjutan", "Analytics Dashboard Terintegrasi", "Prioritas Support & Maintenance 1 Bulan"]
+            name: "Lite 3 Jam",
+            price: "2.8 Juta",
+            desc: "Durasi lebih lama untuk keceriaan yang maksimal.",
+            features: ["Durasi 3 Jam Operasional", "Unlimited Softcopy via QR Code", "Standard Photo Props", "1 Crew Profesional", "Gallery Online 1 Bulan"]
         },
     ],
-    app: [
+    standard: [
         {
-            name: "Paket Core",
-            price: "5 - 10 Juta",
-            desc: "Sistem dasar untuk digitalisasi proses bisnis sederhana.",
-            features: ["Manajemen Data CRUD Sederhana", "Autentikasi User (Login/Register)", "Dashboard Admin Basic", "Export Data (Excel/PDF)", "Setup Database Relasional"]
+            name: "Standard 2 Jam",
+            price: "2.5 Juta",
+            desc: "Paket cetak paling populer untuk berbagai acara.",
+            features: ["Durasi 2 Jam Operasional", "Unlimited High Quality Prints", "Custom Template Frame", "Standard Backdrop", "2 Crew Profesional"]
         },
         {
-            name: "Paket Scale",
-            price: "10 - 25 Juta",
-            desc: "Sistem handal untuk operasional bisnis yang sedang tumbuh.",
-            features: ["Manajemen Role & Akses Kompleks", "Integrasi API Pihak Ketiga", "Laporan Statistik & Grafik Dinamis", "Sistem Notifikasi Realtime", "Deployment VPS & Security Hardening"]
-        },
-        {
-            name: "Paket Prime",
-            price: "30 Juta+",
-            desc: "Solusi Enterprise untuk skala bisnis besar dan high-traffic.",
-            features: ["Arsitektur Microservices Scalable", "Multi-tenancy (SaaS Architecture)", "Payment Gateway & Billing System", "Audit Log & Keamanan Tingkat Lanjut", "SLA Support & Dedicated Server Setup"]
+            name: "Standard 4 Jam",
+            price: "4 Juta",
+            desc: "Ideal untuk pesta pernikahan atau event perusahaan.",
+            features: ["Durasi 4 Jam Operasional", "Unlimited High Quality Prints", "Custom Template Frame", "Standard Backdrop", "2 Crew Profesional"]
         },
     ],
-    mobile: [
+    premium: [
         {
-            name: "Paket Spark",
-            price: "8 - 12 Juta",
-            desc: "Aplikasi mobile ringan untuk kebutuhan informasi dan branding.",
-            features: ["Tampilan UI Mobile-First Modern", "Fitur Informasi Statis & Dinamis", "Push Notification Dasar", "Publish ke Google Play Store", "API Integration Basic"]
+            name: "Premium Special",
+            price: "6 Juta",
+            desc: "Layanan lengkap dengan fitur tambahan eksklusif.",
+            features: ["Durasi 6 Jam Operasional", "Unlimited Prints + Softcopy", "Custom Backdrop & Props", "Guest Book & Pen", "Social Media Station"]
         },
         {
-            name: "Paket Boost",
-            price: "15 - 30 Juta",
-            desc: "Aplikasi fungsional untuk interaksi pengguna yang lebih dalam.",
-            features: ["User Account & Profile Management", "Fitur Transaksi / Booking / Order", "Integrasi Maps / Lokasi GPS", "Chat System / In-App Messaging", "Publish Play Store & App Store (Bantuan)"]
-        },
-        {
-            name: "Paket Prime",
-            price: "40 Juta+",
-            desc: "Super app dengan fitur kompleks dan performa tinggi.",
-            features: ["Pengembangan Native / Hybrid High-Perf", "Algoritma Kustom / AI Integration", "Realtime Tracking & Complex Logic", "Payment Gateway Integration", "Maintenance & Update Berkala"]
+            name: "Custom Event",
+            price: "Hubungi Kami",
+            desc: "Paket yang disesuaikan sepenuhnya dengan kebutuhan Anda.",
+            features: ["Durasi Fleksibel", "Branding Booth Sepenuhnya", "Overlay Video / GIF", "Advanced Analytics", "Dedicated Event Manager"]
         },
     ]
 };
@@ -141,10 +123,10 @@ const PricingPage = () => {
                 {/* Website Pricing */}
                 <div className="mb-20">
                     <h4 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-                        <Globe className="text-sky-500" /> Website Company Profile
+                        <Heart className="text-rose-500" /> Paket Digital (Lite)
                     </h4>
-                    <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-                        {PRICING_DATA.web.map((plan, idx) => {
+                    <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+                        {PRICING_DATA.lite.map((plan, idx) => {
                             return (
                                 <div key={idx} className="bg-white p-8 rounded-2xl border border-slate-200 hover:border-sky-300 hover:shadow-xl transition-all relative overflow-hidden flex flex-col h-full min-h-[400px]">
                                     {idx === 1 && <div className="absolute top-0 right-0 bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>}
@@ -160,7 +142,7 @@ const PricingPage = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <button className="w-full py-3 rounded-xl border-2 border-slate-900 text-slate-900 font-bold hover:bg-slate-900 hover:text-white transition-colors mt-auto">Pilih Paket</button>
+                                    <button className="w-full py-3 rounded-xl border-2 border-slate-900 text-slate-900 font-bold hover:bg-slate-900 hover:text-white transition-colors mt-auto">Pesan Sekarang</button>
                                 </div>
                             );
                         })}
@@ -170,10 +152,10 @@ const PricingPage = () => {
                 {/* Web App Pricing */}
                 <div className="mb-20">
                     <h4 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-                        <Laptop className="text-indigo-500" /> Web Application / SaaS
+                        <Printer className="text-sky-500" /> Paket Cetak (Standard)
                     </h4>
-                    <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-                        {PRICING_DATA.app.map((plan, idx) => {
+                    <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+                        {PRICING_DATA.standard.map((plan, idx) => {
                             return (
                                 <div key={idx} className="bg-slate-900 text-white p-8 rounded-2xl border border-slate-700 hover:border-indigo-400 hover:shadow-2xl transition-all flex flex-col h-full min-h-[400px]">
                                     <div className="mb-8">
@@ -198,10 +180,10 @@ const PricingPage = () => {
                 {/* Mobile Pricing */}
                 <div className="mb-20">
                     <h4 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-                        <Smartphone className="text-rose-500" /> Mobile Application
+                        <Sparkles className="text-amber-500" /> Paket Full Service (Premium)
                     </h4>
-                    <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-                        {PRICING_DATA.mobile.map((plan, idx) => {
+                    <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+                        {PRICING_DATA.premium.map((plan, idx) => {
                             return (
                                 <div key={idx} className="bg-white p-8 rounded-2xl border border-slate-200 hover:border-rose-300 hover:shadow-xl transition-all flex flex-col h-full min-h-[400px]">
                                     <div className="mb-8">
@@ -221,7 +203,7 @@ const PricingPage = () => {
                             );
                         })}
                     </div>
-                    <p className="mt-6 text-center text-slate-500 text-sm">*Harga di atas adalah estimasi. Untuk pengembangan dual platform (Android + iOS) dikenakan biaya tambahan 40-70%.</p>
+                    <p className="mt-6 text-center text-slate-500 text-sm">*Harga sudah termasuk biaya transportasi untuk wilayah Jakarta. Untuk luar kota akan dikenakan biaya tambahan sesuai jarak.</p>
                 </div>
             </section>
 
@@ -230,14 +212,14 @@ const PricingPage = () => {
                 <div className="bg-slate-900 rounded-[2rem] p-8 md:p-16 overflow-hidden relative shadow-2xl">
                     <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
                         <div>
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-widest mb-8 border border-indigo-500/30 shadow-sm">
-                                <ShieldCheck size={16} /> Enterprise & Custom
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/20 text-sky-300 text-xs font-bold uppercase tracking-widest mb-8 border border-sky-500/30 shadow-sm">
+                                <ShieldCheck size={16} /> Corporate Event & Wedding
                             </div>
                             <h3 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-[1.15]">
-                                Butuh Solusi yang <br /> <span className="text-indigo-400">Lebih Kompleks?</span>
+                                Ingin Konsultasi <br /> <span className="text-sky-400">Custom Event?</span>
                             </h3>
                             <p className="text-slate-300 text-lg mb-10 leading-relaxed">
-                                Kami ahli dalam membangun **Custom ERP, CRM, Marketplace**, hingga **SaaS** skala besar yang didesain khusus mengikuti workflow unik bisnis Anda dengan arsitektur yang aman dan scalable.
+                                Kami siap melayani berbagai kebutuhan khusus untuk acara perusahaan, peluncuran produk, hingga pernikahan skala besar dengan fitur **Social Media Live Feed**, **Custom Booth**, dan **Data Collection**.
                             </p>
                             <a href="https://wa.me/628123456789" className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-indigo-600 text-white font-bold hover:bg-indigo-500 transition-all shadow-xl shadow-indigo-600/20 active:scale-95">
                                 <MessageCircle size={22} /> Diskusi Proyek Enterprise
@@ -332,9 +314,9 @@ const PricingPage = () => {
                     <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-sky-400/20 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2"></div>
 
                     <div className="relative z-10">
-                        <h2 className="text-3xl md:text-5xl font-bold mb-8 tracking-tight">Siap Memulai Proyek Anda?</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold mb-8 tracking-tight">Siap Abadikan Momen Bahagia?</h2>
                         <p className="text-sky-100 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
-                            Jangan ragu untuk mendiskusikan kebutuhan bisnis Anda. Konsultasi gratis dan dapatkan penawaran harga yang transparan sekarang juga.
+                            Jangan biarkan hari spesial Anda berlalu tanpa kenangan yang indah. Hubungi kami untuk konsultasi gratis dan penawaran terbaik.
                         </p>
                         <div className="flex gap-5 justify-center flex-wrap">
                             <a href="https://wa.me/6282332901726" className="px-10 py-4 rounded-full bg-white text-sky-600 font-bold hover:shadow-xl transition-all flex items-center gap-3 transform active:scale-95">

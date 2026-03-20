@@ -4,12 +4,12 @@ import gsap from 'gsap';
 const team = [
     {
         name: "Gilang Prasetyo",
-        role: "Founder & Lead Developer",
+        role: "Founder & Specialist Photographer",
         image: "/team/gilang.jpg",
     },
     {
         name: "Nurtsani Assyiffatulhayat",
-        role: "Co Founder & AI Analyst",
+        role: "Co-Founder & Event Manager",
         image: "/team/syifa.jpg",
     },
 ];

@@ -1,27 +1,27 @@
-import { Monitor, Smartphone, Globe } from 'lucide-react';
+import { Image as ImageIcon, Printer, Sparkles } from 'lucide-react';
 import { useLayoutEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
 const services = [
     {
-        icon: <Globe size={32} />,
-        title: "Website Company Profile",
-        description: "Website modern, cepat, dan SEO-friendly untuk membangun kredibilitas brand Anda.",
+        icon: <ImageIcon size={32} />,
+        title: "Digital Photobooth",
+        description: "Fitur sharing instan via QR Code dan gallery online. Modern dan ramah lingkungan untuk event Anda.",
         color: "bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white",
         glowColor: "bg-sky-500"
     },
     {
-        icon: <Monitor size={32} />,
-        title: "Web Application / Sistem",
-        description: "Solusi sistem kustom dan aplikasi web untuk otomatisasi operasional bisnis Anda.",
+        icon: <Printer size={32} />,
+        title: "Standard Printing",
+        description: "Cetak foto instan kualitas lab profesional dalam hitungan detik. Kenangan fisik yang tak terlupakan.",
         color: "bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white",
         glowColor: "bg-indigo-500"
     },
     {
-        icon: <Smartphone size={32} />,
-        title: "Mobile Application",
-        description: "Aplikasi Android & iOS yang intuitif untuk menjangkau pengguna langsung di tangan mereka.",
+        icon: <Sparkles size={32} />,
+        title: "Custom Experience",
+        description: "Custom template, backdrop, dan props yang disesuaikan sepenuhnya dengan tema unik acara Anda.",
         color: "bg-amber-50 text-amber-600 group-hover:bg-amber-600 group-hover:text-white",
         glowColor: "bg-amber-500"
     },
@@ -65,7 +65,7 @@ const Services = () => {
         <section ref={sectionRef} id="services" className="py-20 lg:py-32 bg-white relative">
             <div className="max-w-7xl mx-auto px-6 text-center mb-16">
                 <h2 className="text-sm font-semibold text-sky-500 uppercase tracking-wider mb-2">Layanan Kami</h2>
-                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Solusi Komprehensif untuk Kebutuhan Digital</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Pilihan Layanan Terbaik untuk Acara Anda</h3>
             </div>
 
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">

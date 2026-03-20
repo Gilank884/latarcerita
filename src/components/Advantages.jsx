@@ -1,4 +1,4 @@
-import { Zap, ShieldCheck, Clock, Coins, UserCog, HeartHandshake } from 'lucide-react';
+import { Zap, Camera, Printer, Palette, Users, Sparkles } from 'lucide-react';
 import { useLayoutEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
@@ -6,29 +6,29 @@ import GridBackground from './GridBackground';
 
 const advantages = [
     {
-        icon: <Coins size={24} />,
-        title: "Harga Transparan",
-        description: "Investasi terukur tanpa biaya tersembunyi. Kami berikan penawaran harga yang jelas sejak awal.",
+        icon: <Camera size={24} />,
+        title: "Kamera Profesional",
+        description: "Kami menggunakan kamera DSLR/Mirrorless high-end untuk hasil foto yang tajam dan jernih.",
     },
     {
-        icon: <UserCog size={24} />,
-        title: "Bisa Custom Sesuai Kebutuhan",
-        description: "Solusi yang dirancang khusus mengikuti workflow unik bisnis Anda, bukan template kaku.",
+        icon: <Printer size={24} />,
+        title: "Cetak Tanpa Batas",
+        description: "Tamu Anda bisa berfoto sepuasnya dan mendapatkan cetakan fisik instan tanpa batasan.",
     },
     {
-        icon: <HeartHandshake size={24} />,
-        title: "Support Lifetime",
-        description: "Pendampingan teknis dan dukungan berkelanjutan untuk memastikan sistem Anda berjalan optimal.",
+        icon: <Palette size={24} />,
+        title: "Template Custom",
+        description: "Desain frame foto yang dipersonalisasi sesuai tema acara Anda.",
     },
     {
         icon: <Zap size={24} />,
-        title: "Teknologi Modern",
-        description: "Menggunakan tech-stack terbaru untuk performa tinggi, keamanan maksimal, dan skalabilitas.",
+        title: "Lighting Studio",
+        description: "Setup pencahayaan studio profesional memastikan setiap wajah terlihat sempurna.",
     },
     {
-        icon: <Clock size={24} />,
-        title: "Pengerjaan Tepat Waktu",
-        description: "Timeline yang progresif dan transparan memastikan setiap milestone proyek selesai sesuai target.",
+        icon: <Users size={24} />,
+        title: "Team Berpengalaman",
+        description: "Crew yang ramah siap membantu tamu Anda bergaya paling seru.",
     },
 ];
 
@@ -96,10 +96,10 @@ const Advantages = () => {
                             Standar Kualitas untuk <br /> Hasil Terbaik.
                         </h3>
                         <p className="text-slate-300 text-lg max-w-lg mb-8">
-                            Kami tidak hanya menulis kode, kami membangun pondasi digital yang kuat untuk keberlanjutan bisnis Anda.
+                            Kami menghadirkan pengalaman photobooth yang tidak hanya seru, tapi juga memberikan kualitas kenangan fisik terbaik untuk tamu Anda.
                         </p>
                         <a href="#contact" className="inline-block px-6 py-3 rounded-lg bg-white text-slate-900 font-medium hover:bg-sky-50 transition-colors transform hover:-translate-y-1 hover:shadow-lg">
-                            Diskusikan Ide Anda
+                            Cek Ketersediaan Tanggal
                         </a>
                     </div>
 
