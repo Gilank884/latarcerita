@@ -1,211 +1,93 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { animate, createTimeline, stagger } from 'animejs';
 import gsap from 'gsap';
-import { ArrowRight, Camera, Heart, Sparkles, ChevronRight, Image as ImageIcon, Users } from 'lucide-react';
 
 const HeroAnime = () => {
-    const containerRef = useRef(null);
-    const [gridRows, setGridRows] = useState([]);
-    const [gridCols, setGridCols] = useState([]);
+    const sectionRef = useRef(null);
 
     useEffect(() => {
-        // Calculate grid size based on window
-        const rows = Math.ceil(window.innerHeight / 50);
-        const cols = Math.ceil(window.innerWidth / 50);
-        const rArr = Array.from({ length: rows }, (_, i) => i);
-        const cArr = Array.from({ length: cols }, (_, i) => i);
-        setGridRows(rArr);
-        setGridCols(cArr);
-
-        // Initial Animation Timeline
-        const tl = createTimeline({
-            easing: 'easeOutExpo',
-            duration: 1000
-        });
-
-        // Use GSAP Context for React stability
         const ctx = gsap.context(() => {
-            // 1. Grid Entrance
-            tl.add('.anime-grid-dot', {
-                scale: [0, 1],
-                opacity: [0, 0.3],
-                delay: stagger(20, { grid: [cols, rows], from: 'center' }),
-                duration: 800
-            });
-
-            // 2. GSAP Content Animations
-            gsap.from(".hero-left-anim", {
-                x: -100,
+            // Entrance animations
+            gsap.from(".hero-content-anim", {
+                y: 80,
                 opacity: 0,
-                duration: 1.2,
+                duration: 1.5,
                 stagger: 0.2,
-                ease: "power4.out",
-                delay: 0.5
+                ease: "power4.out"
             });
 
-            gsap.from(".hero-right-anim", {
-                x: 100,
-                opacity: 0,
-                duration: 1.2,
-                ease: "power4.out",
-                delay: 0.8
+            // Wavy shapes slow movement
+            gsap.to(".shapes-float", {
+                y: 30,
+                x: 20,
+                duration: 10,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
             });
+        }, sectionRef);
 
-            // Floating Animation for Visual Elements
-            animate('.floating-icon', {
-                translateY: [-10, 10],
-                direction: 'alternate',
-                loop: true,
-                easing: 'easeInOutSine',
-                duration: 2000,
-                delay: stagger(300)
-            });
-        }, containerRef);
-
-        return () => {
-            ctx.revert();
-            // Anime.js doesn't have a built-in "revert" like GSAP but we can pause it
-        };
-
-    }, []); // Run only once on mount to prevent infinite loop
-
-    const handleDotHover = (e) => {
-        animate(e.target, {
-            scale: [1, 2.5],
-            opacity: [0.3, 0.8],
-            backgroundColor: '#0ea5e9', // Sky blue 500
-            direction: 'alternate',
-            duration: 500,
-            easing: 'easeInOutQuad'
-        });
-    };
+        return () => ctx.revert();
+    }, []);
 
     return (
-        <section ref={containerRef} className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-50">
+        <section ref={sectionRef} className="relative min-h-[95vh] flex items-center justify-center pt-48 pb-32 overflow-hidden bg-white">
 
-            {/* Interactive Background Grid */}
-            <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none lg:pointer-events-auto">
-                <div
-                    className="flex flex-wrap"
-                    style={{ width: '120vw', height: '120vh', marginLeft: '-10vw', marginTop: '-10vh' }}
-                >
-                    {gridRows.map(r => (
-                        gridCols.map(c => (
-                            <div
-                                key={`${r}-${c}`}
-                                className="w-[50px] h-[50px] flex items-center justify-center p-4"
-                            >
-                                <div
-                                    className="anime-grid-dot w-1.5 h-1.5 rounded-full bg-slate-200 transition-colors"
-                                    onMouseEnter={handleDotHover}
-                                ></div>
-                            </div>
-                        ))
-                    ))}
-                </div>
+            {/* Background Decorations (Pattern & Gradient) */}
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                {/* Dot Pattern */}
+                <div className="absolute inset-0 opacity-[0.4]"
+                    style={{
+                        backgroundImage: `radial-gradient(#e2e8f0 1px, transparent 1px)`,
+                        backgroundSize: '32px 32px'
+                    }}
+                ></div>
+
+                {/* Mesh Gradients */}
+                <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-blue-50 rounded-full blur-[120px] opacity-60"></div>
+                <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-sky-50 rounded-full blur-[120px] opacity-60"></div>
+                <div className="absolute top-[20%] right-[20%] w-[30%] h-[30%] bg-blue-100/20 rounded-full blur-[100px] opacity-40"></div>
             </div>
 
-            {/* Content Container */}
-            <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="container max-w-7xl mx-auto px-6 relative z-10">
+                <div className="flex flex-col items-center text-center">
 
-                {/* Text Content */}
-                <div className="max-w-2xl relative z-20">
-                    <div className="hero-left-anim inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 shadow-sm text-sky-600 text-xs font-semibold uppercase tracking-wider mb-6">
-                        <Sparkles size={14} className="text-amber-400" />
-                        <span>Premium Event Photobooth</span>
+                    {/* Floating Decorative Element (Abstract) */}
+                    <div className="shapes-float absolute top-0 lg:top-[-100px] text-blue-100 opacity-50 -z-10">
+                        <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M45.7,-77.2C58.3,-71,67.1,-57.4,74.5,-43.3C81.9,-29.3,87.9,-14.6,87.7,0.1C87.5,14.8,81.1,29.7,73,43.4C64.9,57.1,55,69.5,42.4,77.5C29.8,85.5,14.9,89.1,-0.1,89.3C-15.1,89.4,-30.2,86.2,-43.8,78.8C-57.3,71.3,-69.3,59.7,-77.9,46C-86.4,32.3,-91.5,16.2,-91,0.3C-90.5,-15.6,-84.4,-31.2,-75.4,-44.6C-66.4,-57.9,-54.6,-68.9,-41.2,-74.6C-27.7,-80.3,-13.9,-80.7,0.4,-81.4C14.7,-82.1,29.3,-83.1,45.7,-77.2Z" transform="translate(100 100)" />
+                        </svg>
                     </div>
 
-                    <h1 className="hero-left-anim text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
-                        Abadikan Momen Berharga dengan <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-600 italic">Photobooth Profesional</span> Anda.
+                    {/* Headline */}
+                    <h1 className="hero-content-anim text-7xl md:text-9xl lg:text-[160px] font-bold text-slate-950 leading-[0.8] tracking-tight mb-12" style={{ fontFamily: "'Caveat', cursive" }}>
+                        Ciptakan Cerita<br />
+                        <span className="inline-block pr-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-sky-400">Terbaikmu</span>
                     </h1>
 
-                    <p className="hero-left-anim text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
-                        Hadirkan keceriaan instan di setiap acara. Dari pernikahan hingga event perusahaan, kami siap mencetak kenangan indah Anda.
+                    <p className="hero-content-anim text-lg md:text-xl text-slate-500 max-w-2xl mb-12 font-medium leading-relaxed">
+                        Setiap sudut punya cerita, setiap moment butuh ruang untuk bercerita.
                     </p>
 
-                    <div className="hero-left-anim flex flex-wrap gap-4">
+                    {/* CTA Button */}
+                    <div className="hero-content-anim">
                         <Link
                             to="/start-project"
-                            className="inline-flex justify-center items-center px-10 py-4 rounded-full bg-slate-900 text-white font-bold shadow-2xl shadow-slate-200 hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 group"
+                            className="inline-block px-14 py-6 rounded-2xl bg-blue-900 text-white font-bold text-3xl hover:bg-blue-950 hover:shadow-[0_20px_40px_rgba(30,58,138,0.3)] hover:-translate-y-1 transition-all active:scale-95 shadow-2xl shadow-blue-100"
+                            style={{ fontFamily: "'Caveat', cursive" }}
                         >
-                            Pesan Sekarang
-                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                        <Link
-                            to="/portfolio"
-                            className="inline-flex justify-center items-center px-10 py-4 rounded-full bg-white border border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
-                        >
-                            Lihat Galeri
-                            <ChevronRight size={20} className="text-slate-400" />
+                            Mulai Bercerita
                         </Link>
                     </div>
+
                 </div>
-
-                {/* Visual / Interactive Mockup */}
-                <div className="hero-right-anim relative lg:h-[600px] flex items-center justify-center perspective-1000">
-                    <div className="relative w-full aspect-square max-w-md lg:max-w-full bg-gradient-to-br from-white/90 to-sky-50/90 backdrop-blur-xl rounded-[2.5rem] border border-white/50 shadow-2xl p-8 flex flex-col justify-between z-20 overflow-hidden transform rotate-y-6 hover:rotate-y-0 transition-transform duration-700">
-
-                        {/* Decorative blobs */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-sky-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-200/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-
-                        {/* Floating Cards */}
-                        <div className="floating-icon bg-white p-4 rounded-2xl shadow-lg border border-slate-50 mb-6 w-2/3 self-start">
-                            <div className="flex items-center gap-3 mb-2">
-                                <div className="w-8 h-8 rounded-lg bg-rose-100 flex items-center justify-center text-rose-500">
-                                    <Heart size={18} />
-                                </div>
-                                <div className="h-2 w-20 bg-slate-200 rounded"></div>
-                            </div>
-                            <div className="h-2 w-full bg-slate-100 rounded mb-1"></div>
-                            <div className="h-2 w-4/5 bg-slate-100 rounded"></div>
-                        </div>
-
-                        <div className="floating-icon bg-slate-900 text-white p-5 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow w-3/4 self-center z-10">
-                            <div className="flex justify-between items-center mb-4">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-red-400"></div>
-                                    <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
-                                    <div className="w-2 h-2 rounded-full bg-green-400"></div>
-                                </div>
-                                <Camera size={20} className="text-sky-400" />
-                            </div>
-                            <div className="space-y-3 font-mono text-xs opacity-80">
-                                <div className="flex gap-2">
-                                    <span className="text-pink-400">capture</span>
-                                    <span className="text-sky-300">moment</span>
-                                    <span>=</span>
-                                    <span className="text-yellow-300">"perfect"</span>
-                                </div>
-                                <div className="flex gap-2 pl-4">
-                                    <span className="text-purple-400">await</span>
-                                    <span>print(</span>
-                                    <span className="text-green-400">memory</span>
-                                    <span>);</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="floating-icon bg-white p-4 rounded-2xl shadow-lg border border-slate-50 mt-6 w-2/3 self-end">
-                            <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-500">
-                                    <ImageIcon size={18} />
-                                </div>
-                                <div>
-                                    <div className="h-2 w-24 bg-slate-200 rounded mb-1"></div>
-                                    <div className="h-2 w-16 bg-slate-100 rounded"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    {/* Background Glows for visual */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-sky-200/20 blur-[100px] -z-10 rounded-full"></div>
-                </div>
-
             </div>
+
+            <style jsx>{`
+                .container {
+                    perspective: 1000px;
+                }
+            `}</style>
         </section>
     );
 };
