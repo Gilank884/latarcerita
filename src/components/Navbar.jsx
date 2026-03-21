@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', icon: <Home size={20} />, href: '/' },
-    { name: 'Cheese', icon: <Camera size={20} />, href: '/start-project' },
+    { name: 'Cheese', icon: <Camera size={20} />, href: '/photobooth' },
     { name: 'Gallery', icon: <ImageIcon size={20} />, href: '/portfolio' },
   ];
 

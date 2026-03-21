@@ -10,6 +10,7 @@ import ServicesPage from './pages/ServicesPage';
 import PricingPage from './pages/PricingPage';
 import PortfolioPage from './pages/PortfolioPage';
 import StartProjectPage from './pages/StartProjectPage';
+import PhotoboothPage from './pages/PhotoboothPage';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -31,6 +32,7 @@ function App() {
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/start-project" element={<StartProjectPage />} />
+            <Route path="/photobooth" element={<PhotoboothPage />} />
           </Routes>
         </main>
         <Footer />
