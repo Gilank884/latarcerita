@@ -26,13 +26,7 @@ const HomePage = () => {
     return (
         <div className="pt-0">
             <HeroAnime />
-            <Services />
-            <ProblemSolution />
-            <PricingPreview />
-            <Process />
-            <Advantages />
-            <Testimonials />
-            <CTA />
+
         </div>
     );
 };

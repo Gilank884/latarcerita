@@ -446,7 +446,7 @@ const StartProjectPage = () => {
                 <div className="max-w-7xl w-full flex flex-col items-center py-20 px-6">
                     <div className="text-center mb-16 selection-anim">
                         <h2 className="text-sm font-black text-sky-500 uppercase tracking-[0.3em] mb-4">Langkah Pertama</h2>
-                        <h3 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none">Pilih Kategori <span className="text-slate-400">Proyek Anda</span></h3>
+                        <h3 ref={titleRef} className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none">Pilih Kategori <span className="text-slate-400">Proyek Anda</span></h3>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8 w-full">

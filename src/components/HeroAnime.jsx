@@ -114,14 +114,14 @@ const HeroAnime = () => {
                             className="inline-block px-14 py-6 rounded-2xl bg-blue-900 text-white font-bold text-3xl hover:bg-blue-950 hover:shadow-[0_20px_40px_rgba(30,58,138,0.15)] hover:-translate-y-1 transition-all active:scale-95 shadow-2xl shadow-blue-100"
                             style={{ fontFamily: "'Caveat', cursive" }}
                         >
-                            Gabung Jadi Kreator
+                            Mari Tangkap Momennya
                         </Link>
                     </div>
 
                 </div>
             </div>
 
-            <style jsx>{`
+            <style>{`
                 .container {
                     perspective: 1000px;
                 }

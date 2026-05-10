@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Home, Camera, Image as ImageIcon, Moon } from 'lucide-react';
+import { Home, Camera, User, LayoutDashboard } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const location = useLocation();
+  const { isLoggedIn, login, toggleSidebar, selectedBranch } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,7 +21,6 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', icon: <Home size={20} />, href: '/' },
     { name: 'Cheese', icon: <Camera size={20} />, href: '/photobooth' },
-    { name: 'Gallery', icon: <ImageIcon size={20} />, href: '/portfolio' },
   ];
 
   return (
@@ -54,9 +55,7 @@ const Navbar = () => {
             onMouseLeave={() => setHoveredItem(null)}
           >
             <img src="/Logo.png" alt="Logo" className="h-10 w-auto object-contain" />
-            <span className="text-3xl font-bold text-blue-900 tracking-tight" style={{ fontFamily: "'Caveat', cursive" }}>
-              LatarCerita
-            </span>
+
           </Link>
 
           {/* Menu in the middle */}
@@ -88,18 +87,39 @@ const Navbar = () => {
           {/* Right side elements */}
           <div className="flex items-center gap-4">
             <div className="hidden md:block w-[1px] h-6 bg-slate-200 mx-1"></div>
-            <button
-              className="p-2.5 rounded-xl text-slate-500 hover:bg-white/60 hover:text-blue-600 transition-all"
-              onMouseEnter={() => setHoveredItem('theme')}
-              onMouseLeave={() => setHoveredItem(null)}
-            >
-              <Moon size={20} />
-            </button>
+
+            {isLoggedIn ? (
+              <button
+                onClick={toggleSidebar}
+                onMouseEnter={() => setHoveredItem('user')}
+                onMouseLeave={() => setHoveredItem(null)}
+                className="flex items-center gap-3 px-4 py-2 rounded-xl bg-blue-50 text-blue-700 hover:bg-blue-100 transition-all border border-blue-100"
+              >
+                <div className="hidden lg:block text-right">
+                  <p className="text-[10px] font-bold uppercase tracking-widest leading-none mb-0.5 opacity-60">Cabang</p>
+                  <p className="text-sm font-bold leading-none">{selectedBranch || '...'}</p>
+                </div>
+                <div className="h-9 w-9 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-md">
+                  <User size={18} />
+                </div>
+              </button>
+            ) : (
+              <button
+                onClick={login}
+                onMouseEnter={() => setHoveredItem('login')}
+                onMouseLeave={() => setHoveredItem(null)}
+                className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-blue-900 text-white hover:bg-blue-800 transition-all shadow-lg shadow-blue-200 font-bold text-sm"
+              >
+                <LayoutDashboard size={18} />
+                <span>Login</span>
+              </button>
+            )}
           </div>
         </div>
       </nav>
     </div>
   );
 };
+
 
 export default Navbar;
