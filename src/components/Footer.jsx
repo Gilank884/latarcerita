@@ -23,14 +23,9 @@ const Footer = () => {
                             Abadikan setiap momen berharga Anda dengan layanan photobooth profesional. Kami menghadirkan keceriaan dan kenangan instan untuk setiap acara Anda.
                         </p>
                         <div className="flex gap-4">
-                            <a href="https://www.instagram.com/latar_ceritaa/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 text-slate-400 flex items-center justify-center hover:bg-sky-600 hover:text-white hover:border-sky-500 transition-all active:scale-95">
+                            <a href="https://www.instagram.com/latarceritaa_/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 text-slate-400 flex items-center justify-center hover:bg-sky-600 hover:text-white hover:border-sky-500 transition-all active:scale-95">
                                 <Instagram size={22} />
-                            </a>
-                            <a href="#" className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 text-slate-400 flex items-center justify-center hover:bg-sky-600 hover:text-white hover:border-sky-500 transition-all active:scale-95">
-                                <Linkedin size={22} />
-                            </a>
-                            <a href="#" className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 text-slate-400 flex items-center justify-center hover:bg-sky-600 hover:text-white hover:border-sky-500 transition-all active:scale-95">
-                                <Twitter size={22} />
+
                             </a>
                             <a href="mailto:latarcerita.official@gmail.com" className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 text-slate-400 flex items-center justify-center hover:bg-sky-600 hover:text-white hover:border-sky-500 transition-all active:scale-95">
                                 <Mail size={22} />

@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import SEO from './components/SEO';
 import BranchSelectionModal from './components/BranchSelectionModal';
+import WhatsAppFloat from './components/WhatsAppFloat';
 import PinEntryModal from './components/PinEntryModal';
 import Sidebar from './components/Sidebar';
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -44,6 +45,7 @@ const AppContent = () => {
       <PinEntryModal />
       <BranchSelectionModal />
       <Sidebar />
+      {!isAdminPage && <WhatsAppFloat />}
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />

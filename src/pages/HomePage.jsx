@@ -1,5 +1,7 @@
 import { useLayoutEffect } from 'react';
 import HeroAnime from '../components/HeroAnime';
+import BoothFeature from '../components/BoothFeature';
+import MomentGallery from '../components/MomentGallery';
 import Services from '../components/Services';
 import ProblemSolution from '../components/ProblemSolution';
 import PricingPreview from '../components/PricingPreview';
@@ -26,7 +28,8 @@ const HomePage = () => {
     return (
         <div className="pt-0">
             <HeroAnime />
-
+            <BoothFeature />
+            <MomentGallery />
         </div>
     );
 };
